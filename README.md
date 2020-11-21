@@ -659,6 +659,10 @@ ionic cordova run android --device | ionic capacitor run android -l --external
 
 ionic cordova build android
 
+ionic cordova platform remove android
+
+ionic cordova platform add android
+
 ionic cordova resources --icon
 
 ionic cordova resources --splash
@@ -683,14 +687,6 @@ npm install @ionic-native/local-notifications
 
 npm install chart.js --save
 
-gamma -0 izquierda (-20)
-
-gamma + 0 derecha (+20)
-
-beta + 0 adelante (+60)
-
-que sea menor a 10
-
 platform.ready()
 
 Cordova Android duplicated uses-feature from two plugins
@@ -701,33 +697,16 @@ comment out or remove content of the section
 
 <config-file target="AndroidManifest.xml" parent="/*">
 
-ionic cordova platform remove android
-
-ionic cordova platform add android
-
 para instalar mas de una aplicacion ionic en el celular cambiar en el config.xml el id del widget
 
 <preference name="ShowSplashScreenSpinner" value="false"/>
 
-formato psd - photopea.com - editarlo - bajar .png (192*192) - icono / .png (2208*2208) - splash
-
-1024*1024
-
-2732*2732
-
 platform/android/app/build.gradle
 
     defaultConfig{
+	multiDexEnabled true
+    }
 
-		multiDexEnabled true
-
-	}
-
-	
-
-	
-
-	
 
 platforms/android/app/src/main/androidmanifest.xml
 
@@ -739,24 +718,13 @@ git push ionic master
 
 si er_address_unrecheable -> firewall
 
-ionic serve --all
-
-git push ionic master
-
-si er_address_unrecheable -> firewall
 
     console.log(this.screenOrientation.type);
-
     this.screenOrientation.onChange().subscribe(
-
       () => {
-
         console.log("Orientation Changed " + this.screenOrientation.type);
-
         this.orientation = this.screenOrientation.type;
-
       }
-
     );
 
 
