@@ -101,7 +101,6 @@ Table of Contents
 # Access Manager
 
 
-
 *   Resource Owner habilita el grant_type password
 *   Microfocus - Cuando probas grant_type password no devuelve id_token
 *   Llamar al endpoint de userinfo para desencriptar el access_token
@@ -228,28 +227,18 @@ playbook.yml
 --- (comienzo de script)
 
 -name: name
-
 hosts: targetNode (sale del inventory)
 
 tasks:
-
 	-name: taskName
-
 	yum:
-
 		name: apache
-
 		state: present
-
 	-name: secondTaskName
 
 	service:
-
 		name: apache
-
 		state: start
-
-		
 
 		
 
@@ -1493,32 +1482,6 @@ server.servlet.context-path=/facturacion
 
 Si tiene JPA te va a pedir un datasource
 
-Spring crea los objetos a traves de reflection
-
-https://docs.oracle.com/javase/tutorial/reflect/index.html
-
-https://docs.oracle.com/javase/tutorial/java/generics/index.html
-
-wiring / cableado (por constructor) -> le pasa un objeto del contexto como parametro
-
-@Component -> si no le agrego nombre (@Component("nombre")) spring me pone el nombre de la clase en lowercase
-
-@Autowired -> se debe ingresar que objeto se va a utilizar salvo que exista un solo componente
-
-Cuando hay dos objetos de la misma clase y spring no puede hacer autowired automático -> Se utiliza el @Qualifier("example")
-
-Autowired = El objeto tiene que ser parte del contexto
-
-@Autowired
-
-private Environment env;
-
-@Value("${spring.ldap.password}")
-
-private String password;
-
-	
-
 log.info(env.getProperty("spring.ldap.password"));
 
 log.info(password);
@@ -1530,6 +1493,29 @@ Si usas un contexto es inyección de dependencias
 si usas new es polimorfismo
 
 Evento ApplicationReadyEvent en la clase de inicialización
+
+### Annotations
+
+@Component -> si no le agrego nombre (@Component("nombre")) spring me pone el nombre de la clase en lowercase
+
+@Autowired -> se debe ingresar que objeto se va a utilizar salvo que exista un solo componente
+
+Cuando hay dos objetos de la misma clase y spring no puede hacer autowired automático -> Se utiliza el @Qualifier("example")
+
+Autowired = El objeto tiene que ser parte del contexto
+
+@Autowired
+private Environment env;
+
+@Value("${spring.ldap.password}")
+private String password;
+
+What’s special about @Repository?
+
+In addition to pointing out, that this is an Annotation based Configuration, @Repository’s job is to catch platform specific exceptions and re-throw them as one of Spring’s unified unchecked exception. For this, we’re provided with PersistenceExceptionTranslationPostProcessor, that we are required to add in our Spring’s application context like this:
+
+<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+This bean post processor adds an advisor to any bean that’s annotated with @Repository so that any platform-specific exceptions are caught and then re-thrown as one of Spring’s unchecked data access exceptions.
 
 
 ### Spring Security
@@ -1599,14 +1585,9 @@ In some cases, it may be desirable to fail startup of a service if it cannot con
 
 ## Testing
 
-
-### Rest assured
-
-
 ### Gatling
 
 [https://gatling.io/](https://gatling.io/)
-
 
 ### JMeter
 
@@ -1624,6 +1605,28 @@ jmeter -n -t "IRM Stats.jmx" -f -l stats_results.csv -e -o Output
 
 jmeter -n -f -t "IRM Stats.jmx" && python IRM_Statistics_Parser.py
 
+### Mockito
+
+DoReturn / ThenReturn
+
+No type safety
+The parameter of doReturn is Object unlike thenReturn. So, there is no type checking in the compile time. When the type is mismatched in the runtime, there would be an WrongTypeOfReturnValue exception
+
+Although there is no type safety, the advantage of doReturn-when is no side effect.
+
+
+https://stackoverflow.com/questions/15494926/initialising-mock-objects-mockito
+https://mincong.io/2019/09/13/init-mock/
+
+
+The first solution (with the MockitoAnnotations.initMocks) could be used when you have already configured a specific runner (SpringJUnit4ClassRunner for example) on your test case.
+
+The second solution (with the MockitoJUnitRunner) is the more classic and my favorite. The code is simpler.
+
+
+### Rest assured
+
+TODO
 
 ## Tomcat
 
