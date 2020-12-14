@@ -1952,8 +1952,6 @@ Minikube - es para tener un kubernetes local
 
 HISTTIMEFORMAT="%d/%m/%y %T "
 
-
-
 *   wc -l cantidad de lineas
 *   vi :set number
 *   rpm -qa	
@@ -1966,37 +1964,20 @@ Setear como un servicio systemctl -> [https://crunchify.com/systemd-upstart-resp
 
 Comandos para cambiar la ip en el bash de linux:
 
-1 ifconfig eth0 192.168.1.1 netmask 255.255.255.0	(ip de pc y mscara de subred)
-
-2 route add default gw 192.168.1.1			(puerta de enlace predeterminada)
-
+1 ifconfig eth0 192.168.10.150 netmask 255.255.255.0	(ip de pc y mscara de subred)
+2 route add default gw 192.168.10.1			(puerta de enlace predeterminada)
 3 echo nameserver 192.168.1.200 > /etc/resolv.conf	(DNS)
 
-Ejemplo:
-
-1 ifconfig eth0 192.168.10.150 netmask 255.255.255.0	(ip de pc y mscara de subred)
-
-2 route add default gw 192.168.10.1			(puerta de enlace predeterminada)
-
-3 echo nameserver 10.11.11.1 > /etc/resolv.conf
 
 Egrep –io ‘<a [a-z0-9\.=?”/ : -]+ /a>’ index.html
 
-Grep: busquedas dentro de un archivo
-
-Grep ‘root’ /etc/passwd                    muestra toda la linea
-
-Grep ‘^root’               busca root en la primer línea / comienzo de la linea
-
-Grep –w ‘roo’           busca la palabra exacta
-
-Grep –i                        busca en mayúscula y miniscula
-
--iw                           busca la palabra exacta tanto en mayúscula y minúscula
-
--v                            busca todo lo que no tenga la palabra
-
--n                           numero de linea
+Grep ‘root’ /etc/passwd         muestra toda la linea
+Grep ‘^root’               	busca root en la primer línea / comienzo de la linea
+Grep –w ‘roo’           	busca la palabra exacta
+Grep –i                       	busca en mayúscula y miniscula
+-iw	                        busca la palabra exacta tanto en mayúscula y minúscula
+-v                            	busca todo lo que no tenga la palabra
+-n                           	numero de linea
 
 Egrep –io ‘[a-z09._]+        muestra palabas cortadas hasta el character no tomado. Divisor (ejemplo hola  @   gmail.com
 
@@ -2022,12 +2003,7 @@ Chmod a/u/g/o  all/user/group/other  +/-   r/w/x
 
 /etc/passwd:  archivo editable que contiene toda la información acerca de los usuarios creados en nuestro sistema.
 
-Chown: hacer dueño a un usuario de un directorio o archivo
-
-Chgrp: hacer dueño a un grupo de un directorio o archivo
-
  
-
 Cd - : volver
 
 Echo >/>> : escribe lo que se escribiria por pantalla en un archive
@@ -2043,8 +2019,6 @@ Nano x.sh    -	hacer un script 	/gedit 	/signo mayor
   
 
 (./)busybox  programa que guarda todos los comandos
-
-tty nos dice en que terminal estamos
 
 libreria pam     formas de logear/encriptar   coordenadas/pendrive
 
@@ -2063,22 +2037,15 @@ cat meminfo | more
 watch "grep 'MemFree:' meminfo"       mira el uso de memoria en tiempo real
 
 /run/    procesos que se estan ejecutando - pin del proceso
-
 /bin/ programas ejecutados por el usuario
-
 /sbin/ programas ejecutados por root (ifconfg)
-
 /usr/ documentacion, manuales, bin/sbin pero no del sistema base
-
 /var/ log del sistema operativo
 
-/dev/   terminales
 
-du -sh /var     espacio 
-
-du -h –maxdepth=1 ?
-
-df -h muestra los discos montados y el espacio en el disco
+du -sh /var     	Muestra el espacio que ocupa el directorio 
+du -h –maxdepth=1 
+df -h 			muestra los discos montados y el espacio en el disco
 
 dpkg -L mc | more:      se ve lo que contiene el paquete mc
 
@@ -2103,10 +2070,9 @@ Type=Application
 Categories=Application;Network;
 
 That way you will have an icon to click which will launch your script.
-
 You may have to set the executable flag:
-
 chmod +x ~/Desktop/ssh_home.desktop
+
 
 rkhunter –check (revisa backdoors)
 
@@ -2115,17 +2081,13 @@ find / -type f -mtime -1
 -atime n
 
 	File was  last  accessed n*24 hours ago.  When find figures out
-
 	how many 24-hour periods ago the file  was  last  accessed, any       	fractional part is ignored, so to match -atime +1, a file has to
-
 	have been accessed at least two days ago.
 
 -mtime n
 
       File’s  data was last modified n*24 hours ago.  See the comments
-
       for -atime to understand how rounding affects the interpretation
-
       of file modification times.
 
 W: muestra que usuarios estan conectados actualmente
@@ -2154,25 +2116,21 @@ wget www.google.com.ar  -O  google.dat    # pasar archivo a .dat
 Archivos .tar.gz:
 
 Comprimir: tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/
-
 Descomprimir: tar -xzvf archivo.tar.gz
 
 Archivos .tar:
 
 Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
-
 Desempaquetar: tar -xvf paquete.tar
 
 Archivos .gz:
 
 Comprimir: gzip -9 index.php
-
 Descomprimir: gzip -d index.php.gz
 
 Archivos .zip:
 
 Comprimir: zip archivo.zip carpeta
-
 Descomprimir: unzip archivo.zip
 
 Copiado de archivos con distinto nombre
