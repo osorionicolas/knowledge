@@ -1965,18 +1965,26 @@ Setear como un servicio systemctl -> [https://crunchify.com/systemd-upstart-resp
 Comandos para cambiar la ip en el bash de linux:
 
 1 ifconfig eth0 192.168.10.150 netmask 255.255.255.0	(ip de pc y mscara de subred)
+
 2 route add default gw 192.168.10.1			(puerta de enlace predeterminada)
+
 3 echo nameserver 192.168.1.200 > /etc/resolv.conf	(DNS)
 
 
 Egrep –io ‘<a [a-z0-9\.=?”/ : -]+ /a>’ index.html
 
 Grep ‘root’ /etc/passwd         muestra toda la linea
+
 Grep ‘^root’               	busca root en la primer línea / comienzo de la linea
+
 Grep –w ‘roo’           	busca la palabra exacta
+
 Grep –i                       	busca en mayúscula y miniscula
+
 -iw	                        busca la palabra exacta tanto en mayúscula y minúscula
+
 -v                            	busca todo lo que no tenga la palabra
+
 -n                           	numero de linea
 
 Egrep –io ‘[a-z09._]+        muestra palabas cortadas hasta el character no tomado. Divisor (ejemplo hola  @   gmail.com
@@ -2037,14 +2045,20 @@ cat meminfo | more
 watch "grep 'MemFree:' meminfo"       mira el uso de memoria en tiempo real
 
 /run/    procesos que se estan ejecutando - pin del proceso
+
 /bin/ programas ejecutados por el usuario
+
 /sbin/ programas ejecutados por root (ifconfg)
+
 /usr/ documentacion, manuales, bin/sbin pero no del sistema base
+
 /var/ log del sistema operativo
 
 
 du -sh /var     	Muestra el espacio que ocupa el directorio 
+
 du -h –maxdepth=1 
+
 df -h 			muestra los discos montados y el espacio en el disco
 
 dpkg -L mc | more:      se ve lo que contiene el paquete mc
@@ -2069,8 +2083,8 @@ Terminal=true
 Type=Application  
 Categories=Application;Network;
 
-That way you will have an icon to click which will launch your script.
-You may have to set the executable flag:
+That way you will have an icon to click which will launch your script. You may have to set the executable flag:
+
 chmod +x ~/Desktop/ssh_home.desktop
 
 
@@ -2116,21 +2130,25 @@ wget www.google.com.ar  -O  google.dat    # pasar archivo a .dat
 Archivos .tar.gz:
 
 Comprimir: tar -czvf empaquetado.tar.gz /carpeta/a/empaquetar/
+
 Descomprimir: tar -xzvf archivo.tar.gz
 
 Archivos .tar:
 
 Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
+
 Desempaquetar: tar -xvf paquete.tar
 
 Archivos .gz:
 
 Comprimir: gzip -9 index.php
+
 Descomprimir: gzip -d index.php.gz
 
 Archivos .zip:
 
 Comprimir: zip archivo.zip carpeta
+
 Descomprimir: unzip archivo.zip
 
 Copiado de archivos con distinto nombre
