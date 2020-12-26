@@ -1703,6 +1703,8 @@ La propiedad innerHTML es más intensiva para procesar que textContent, ya que e
 
 En los casos que sólo quiero actualizar texto (sin tags) es conveniente utilizar textContent, de esta forma no hay proceso de redibujo de los elementos.
 
+Factories: Factories are generally used in testing to create objects without creating the full object declaration inline
+
 jshint - para analizar codigo
 
 || o ??
@@ -1746,6 +1748,25 @@ console.log(uniqueFruits2); // returns [“banana”, “apple”, “orange”,
 var fruits = [“banana”, “apple”, “orange”, “watermelon”];
 var fruitsObj = { …fruits };
 console.log(fruitsObj); // returns {0: “banana”, 1: “apple”, 2: “orange”, 3: “watermelon”, 4: “apple”, 5: “orange”, 6: “grape”, 7: “apple”}
+
+## Closures
+
+const addTo = (numberOne) => {
+	return (numberTwo) => {
+		return numberOne + numberTwo;
+	}
+}
+
+const addToFive = addTo(5);
+const addToTen = addTo(10);
+
+addtoFive(3); // => 8
+addToTen(3); // => 13
+
+## NodeJS
+
+Debug con chrome tools:
+	node --inspect <file>.js
 
 ## Speech Recognition
 
@@ -1879,12 +1900,6 @@ function getHotDog () {
     .then(addSausage)
     .then(addSauce)
 }
-
-
-## NodeJS
-
-Debug con chrome tools:
-	node --inspect <file>.js
 
 
 # Kafka
