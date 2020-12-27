@@ -47,6 +47,7 @@ Table of Contents
 - [Linux](#linux)
   * [Comprimir / Descomprimir](#comprimir--descomprimir)
 - [Machine Learning](#machine-learning)
+- [Memoization](#memoization)
 - [Patrones de diseño](#patrones-de-diseno)
 - [Protocolos](#protocolos)
 - [Protocol Buffers](#protocol-buffers)
@@ -2253,6 +2254,12 @@ N is the number of examples in .
 
 Loss - es la distancia entre el punto y la recta, todos los puntos que estan sobre la recta son 0^2 y los que no, son distancial^2, la suma de todos los valores se divide por la cantidad de puntos
 
+# Memoization
+
+Memoization
+This technique involves using an Object in javascript or any other data structure with key-value pairs (in other languages) to temporarily store some data while the algorithm is being executed. A key-value pair data structure is used because keys are unique so the same key won't be generated more than once. So if certain data has to be accessed multiple times, it can be stored in only one run in the form of key value pairs and then it can be accessed multiple times without the need of regenerating it. When this technique is not used, identical data is created over and over again which makes the algorithm slower.
+
+This approach also allows to add some logic that helps get the solution at the same time we access the data of the object.
 
 # Patrones de diseño
 
