@@ -1858,49 +1858,49 @@ Refactor
 
 1)
 
-function getHotDog () {
-    return new Promise(function (resolve, reject) {
-        getBun().then(function (bun) {
-            addSausage(bun).then(function (bunWithSausage) {
-                addSauce(bunWithSausage).then(function (hotdog) {
-                    resolve(hotdog)
-                })
-            })
-        })
-    })
-}
+	function getHotDog () {
+	    return new Promise(function (resolve, reject) {
+		getBun().then(function (bun) {
+		    addSausage(bun).then(function (bunWithSausage) {
+			addSauce(bunWithSausage).then(function (hotdog) {
+			    resolve(hotdog)
+			})
+		    })
+		})
+	    })
+	}
 
 2)
 
-function getHotDog () {
-    return getBun().then(function (bun) {
-        return addSausage(bun).then(function (bunWithSausage) {
-            return addSauce(bunWithSausage).then(function (hotdog) {
-                return hotdog
-            })
-        })
-    })
-}
+	function getHotDog () {
+	    return getBun().then(function (bun) {
+		return addSausage(bun).then(function (bunWithSausage) {
+		    return addSauce(bunWithSausage).then(function (hotdog) {
+			return hotdog
+		    })
+		})
+	    })
+	}
 
 3)
 
-function getHotDog () {
-    return getBun().then(function (bun) {
-        return addSausage(bun)
-    }).then(function (bunWithSausage) {
-        return addSauce(bunWithSausage)
-    }).then(function (hotdog) {
-        return hotdog
-    })
-}
+	function getHotDog () {
+	    return getBun().then(function (bun) {
+		return addSausage(bun)
+	    }).then(function (bunWithSausage) {
+		return addSauce(bunWithSausage)
+	    }).then(function (hotdog) {
+		return hotdog
+	    })
+	}
 
 4)
 
-function getHotDog () {
-    return getBun()
-    .then(addSausage)
-    .then(addSauce)
-}
+	function getHotDog () {
+	    return getBun()
+	    .then(addSausage)
+	    .then(addSauce)
+	}
 
 
 # Kafka
@@ -2238,8 +2238,6 @@ MSE = 1/N 	  E 	(y - prediction(x))^2
 
 			(x,y)eD 
 
-			
-
 						
 
 x is the set of features (for example, chirps/minute, age, gender) that the model uses to make predictions.
@@ -2341,19 +2339,20 @@ A continuación mostrare un ejemplo:
 
 Primeramente tenemos una clase que define nuestra entidad que podríamos usar cuando consultamos una base de datos y debemos manipular la tabla en nuestro código
 
-class Persona{
+	class Persona{
 
-    public String nombre;
-    public int edad;
-	
-    public Persona(String nombre,int edad){
-        this.nombre = nombre;
-        this.edad = edad;
-    }
+	    public String nombre;
+	    public int edad;
 
-    public void setEdad(int edad){
-       this.edad = edad    
-	}}
+	    public Persona(String nombre,int edad){
+		this.nombre = nombre;
+		this.edad = edad;
+	    }
+
+	    public void setEdad(int edad){
+	       this.edad = edad    
+	    }
+	}
 
 Luego tenemos una interfaz que define el comportamiento que debe de tener nuestro repository concreto, en este caso en la clase concreta solo implementaremos un metodo read.
 
@@ -2896,89 +2895,79 @@ The trait PartialFunction requires that the method isDefinedAt and apply be impl
 
 isDefinedAt define para que casos aplica la función y apply es lo que va a hacer la función
 
-val doubleEvens: PartialFunction[Int, Int] =
+	val doubleEvens: PartialFunction[Int, Int] =
 
-  new PartialFunction[Int, Int] {
+	  new PartialFunction[Int, Int] {
 
-    //States that this partial function will take on the task
+	    //States that this partial function will take on the task
 
-    def isDefinedAt(x: Int) = x % 2 == 0
+	    def isDefinedAt(x: Int) = x % 2 == 0
 
-    //What we do if this partial function matches
+	    //What we do if this partial function matches
 
-    def apply(v1: Int) = v1 * 2
+	    def apply(v1: Int) = v1 * 2
 
-  }
+	  }
 
-val tripleOdds: PartialFunction[Int, Int] = new PartialFunction[Int, Int] {
+	val tripleOdds: PartialFunction[Int, Int] = new PartialFunction[Int, Int] {
 
-  def isDefinedAt(x: Int) = x % 2 != 0
+	  def isDefinedAt(x: Int) = x % 2 != 0
 
-  def apply(v1: Int) = v1 * 3
+	  def apply(v1: Int) = v1 * 3
 
-}
+	}
 
 #Alternative
 
-val doubleEvens: PartialFunction[Int, Int] = {
+	val doubleEvens: PartialFunction[Int, Int] = {
 
-  case x if (x % 2) == 0 => x * 2
+	  case x if (x % 2) == 0 => x * 2
 
-}
+	}
 
-val tripleOdds: PartialFunction[Int, Int] = {
+	val tripleOdds: PartialFunction[Int, Int] = {
 
-  case x if (x % 2) != 0 => x * 3
+	  case x if (x % 2) != 0 => x * 3
 
-}
+	}
 
-val whatToDo = doubleEvens orElse tripleOdds  // trandThen (printEven orElse printOdd) //Here we chain the partial functions together
+	val whatToDo = doubleEvens orElse tripleOdds  // trandThen (printEven orElse printOdd) //Here we chain the partial functions together
 
-whatToDo(3) should be(9)
+	whatToDo(3) should be(9)
 
-whatToDo(4) should be(8)
-
-
-## Exceptions
-
-intercept[IndexOutOfBoundsException] {
-
-  println(a(5))
-
-}
+	whatToDo(4) should be(8)
 
 
-## Patter Matching
+## Pattern Matching
 
-@
+"@" gives you a variable-binding pattern. The meaning of such a pattern is to perform the pattern match as normal, and if the pattern succeeds, set the variable to the matched object just as with a simple variable pattern
 
-This gives you a variable-binding pattern. The meaning of such a pattern is to perform the pattern match as normal, and if the pattern succeeds, set the variable to the matched object just as with a simple variable pattern
+	case list @ List(1, _*) => s"$list"
+	
 
-case list @ List(1, _*) => s"$list"
+	def goldilocks(expr: (String, String)) = expr match {
 
-def goldilocks(expr: (String, String)) = expr match {
+		case ("porridge", _) => "eating"
 
-	case ("porridge", _) => "eating"
+		case ("porridge", bear) => bear + " said someone's been eating my porridge"
 
-	case ("porridge", bear) => bear + " said someone's been eating my porridge"
-
-}
+	}
 
 A backquote can be used to refer to a stable variable in scope to create a case statement - this prevents "variable shadowing"
 
-val foodItem = "porridge"
+	val foodItem = "porridge"
 
-def goldilocks(expr: (String, String)) = expr match {
+	def goldilocks(expr: (String, String)) = expr match {
 
-  case (`foodItem`, _) => "eating"
+	  case (`foodItem`, _) => "eating"
 
-  case ("chair", "Mama") => "sitting"
+	  case ("chair", "Mama") => "sitting"
 
-  case ("bed", "Baby") => "sleeping"
+	  case ("bed", "Baby") => "sleeping"
 
-  case _ => "what?"
+	  case _ => "what?"
 
-}
+	}
 
 A backquote can be used to refer to a method parameter as a stable variable to create a case statement:
 
