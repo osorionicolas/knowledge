@@ -3605,7 +3605,7 @@ Dependency Injection es una forma de implementar Inversion of Control
 
 IP Publica - icanhazip.com 
 
-Generar link público de mi app local - ssh -R 80\:\localhost\:\8080 ssh.localhost.run
+Generar link público de mi app local - ssh -R 80\:localhost\:8080 ssh.localhost.run
 
 [https://cors-anywhere.herokuapp.com](https://cors-anywhere.herokuapp.com)
 
