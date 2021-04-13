@@ -48,6 +48,7 @@ Table of Contents
   * [Comprimir / Descomprimir](#comprimir--descomprimir)
 - [Machine Learning](#machine-learning)
 - [Memoization](#memoization)
+- [NativeScript](#nativescript)
 - [Patrones de diseño](#patrones-de-diseno)
 - [Protocolos](#protocolos)
 - [Protocol Buffers](#protocol-buffers)
@@ -2254,10 +2255,17 @@ Loss - es la distancia entre el punto y la recta, todos los puntos que estan sob
 
 # Memoization
 
-Memoization
 This technique involves using an Object in javascript or any other data structure with key-value pairs (in other languages) to temporarily store some data while the algorithm is being executed. A key-value pair data structure is used because keys are unique so the same key won't be generated more than once. So if certain data has to be accessed multiple times, it can be stored in only one run in the form of key value pairs and then it can be accessed multiple times without the need of regenerating it. When this technique is not used, identical data is created over and over again which makes the algorithm slower.
 
 This approach also allows to add some logic that helps get the solution at the same time we access the data of the object.
+
+# NativeScript
+
+tns debug android | tns debug android --chrome
+chrome-devtools://devtools/bundled/inspector.html?experiments=true&ws=localhost:40000
+
+tns run android --emulator
+
 
 # Patrones de diseño
 
@@ -2612,6 +2620,14 @@ const errorMessageNode = screen.getByRole('alert')
 import {render, screen} from '@testing-library/react'
 
 The benefit of using screen is you no longer need to keep the render call destructure up-to-date as you add/remove the queries you need. You only need to type screen. and let your editor's magic autocomplete take care of the rest.
+
+## React Native
+
+npx react-native init Delen
+
+
+// Levantar aplicacion
+npx react-native run-android
 
 
 # Redes
@@ -3610,3 +3626,25 @@ Generar link público de mi app local - ssh -R 80\:localhost\:8080 ssh.localhost
 [https://cors-anywhere.herokuapp.com](https://cors-anywhere.herokuapp.com)
 
 Auto TOC generator - https://ecotrust-canada.github.io/markdown-toc/
+
+
+Math.ceil(value/5)*5 -> obtener el proximo numero multiplo de 5
+
+
+Gson gson = new GsonBuilder().setPrettyPrinting().create();
+return gson.toJson(this);
+
+Semaphore
+
+
+Get APK from mobile
+
+adb shell pm list packages
+adb shell pm path com.example.someapp
+adb pull /data/app/com.example.someapp-2.apk path/to/desired/destination
+
+
+Decompile APK
+
+apktool d application.apk
+
