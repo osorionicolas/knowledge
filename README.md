@@ -9,8 +9,6 @@ Table of Contents
 - [AWS](#aws)
 - [Big O](#big-o)
 - [CSS](#css)
-- [Docker](#docker)
-  * [Docker Compose](#docker-compose)
 - [Electron](#electron)
 - [ELK](#elk)
 - [Firebase](#firebase)
@@ -457,31 +455,6 @@ auto (This is the one we are looking at. It will only render this element once t
 .element {
     content-visibility:auto;
 }
-
-# Docker
-
-No es necesario realizar el build, simplemente ejecutar el run
-
-restar:always - levanta el container al reiniciar el host
-
-https://code-maze.com/ci-jenkins-docker/
-
-
-
-*   docker pull tomcat -> descarga la imagen
-*   docker images -> lista las imagenes
-*   docker ps -> contenedores que estan corriendo
-*   docker -> run --name tomcat8080 -d tomcat -> levantar docker
-*   docker run --name tomcat8080 -p 8080:8080 -d tomcat
-*   docker exec -it <container name> /bin/bash
-
-
-## Docker Compose
-
-
-
-*   docker-compose logs - ver logs
-*   docker-compose up/down
 
 
 # Electron
