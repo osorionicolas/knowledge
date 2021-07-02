@@ -278,6 +278,15 @@ Formas un poquito más avanzadas:
 
 # Big O
 
+coste lineal = O(N)
+
+array - acceso por indice es constante pero insercion de datos lineal
+list - acceso lineal pero insercion de datos constante
+tabla de hash - acceso constante, la clave es una posicion de memoria, la insercion de datos tambien es constante
+pilas / colas - son grafos, pilas LIFO, cola FIFO
+grafos / arboles - relaciones entre entidades
+min heap / max heap - colas de prioridads que 
+
 ¿Qué es la notación Big O?
 
 La notación Big O es uno de esos temas que todos deberíamos de conocer como Ingenieros de Software, sin embargo en ocasiones puede resultar confuso o no necesario porque -qué importa, mi código ya funciona!.
@@ -694,14 +703,11 @@ si er_address_unrecheable -> firewall
 
 # Java
 
-
 *   JME – Mobile (GPS, Tablets, Celulares)
 *   JSE – Desktop
 *   JEE – Aplicación Web
 
 InstaceOf → Saber si pertenece a una determinada clase
-
-JavaFX – Scene Builder
 
 clase custom para excepcion tiene que heredar de exception -> extends exception
 
@@ -745,19 +751,12 @@ OP1 | OP2
 Accesibilidad
 
    • Public
-
    • Private
-
    • Abstract
-
    • Virtual
-
    • Protected
-
        ◦ Paquete
-
        ◦ Herencia
-
    • Default / Package → Para clases del paquete
 
 Final
@@ -769,21 +768,16 @@ Final
 Collection → Interfaz (Colecciones: Agrupaciones de datos)
 
    • Set
-
        ◦ No indices
 
    • List
-
        ◦ Indices
 
    • Queue
-
        ◦ Trabaja sobre las puntas
 
    • Map
-
        ◦ Si, son colecciones pero no implementan de la clase collection
-
        ◦ llave / valor (C# → Diccionario)
 
 Inyección de dependencias -> polimorfismo a través de un contexto
@@ -794,55 +788,10 @@ CommandLineRunner es para correrlo como app de escritorio
 
 @Bean (name = "nombre")
 
-Frameworks
-
-
-
-*   dropwizard
-*   spark
-*   primefaces - framework de vistas
-
 @JsonProperty("valor")
 
-@Transactional ()
+@Transactional annotation for atomic sql operations
 
-<properties>
-
-    <failOnMissingWebXml>false</failOnMissingWebXml>
-
-</properties>
-
-TroubleShooting
-
-Class is managed, but is not listed in the persistence.xml file
-
-If you are using Eclipse:(1) Select: (Your Project) -> Properties -> JPA; (2) Look for "Persistent class management" and select the option "Discover annotated classes automatically"; (3) Press "Apply".
-
-JavaHL
-
-Select Window >> Preferences
-
-Expand Team >> SVN
-
-Under SVN interface set Client to SVNKit (Pure Java) SVNKit....
-
-Deshabilitar warnings de js
-
-Right-click your project.
-
-Navigate to: Properties → JavaScript → Include Path
-
-Select Source tab.
-
-Expand JavaScript source folder.
-
-Highlight Excluded pattern.
-
-Press the Edit button.
-
-Press the Add button next to Exclusion patterns box.
-
-You may either type Ant-style wildcard pattern, or click Browse button to mention the JavaScript source by name.
 
 Reflection
 
@@ -877,21 +826,13 @@ Optional
 Create Optional object > Optional.of(<algo no nulo>) / Optional.ofNullable(<algo nulo>);
 
     String name = Optional.ofNullable(nullName).orElse("john");
-
-optional.ifPresent(name -> System.out.println(name.length()));
-
+	optional.ifPresent(name -> System.out.println(name.length()));
     Integer year = 2016;
-
     Optional<Integer> yearOptional = Optional.of(year);
-
     boolean is2016 = yearOptional.filter(y -> y == 2016).isPresent();
-
     Optional<String> found = Stream.of(getEmpty(), getHello(), getBye()) //Metodos creados anteriormente para retornar optional
-
       .filter(Optional::isPresent)
-
       .map(Optional::get)
-
       .findFirst();
 
 Lazy Initialization: When lazy initialization is enabled, beans are created as they are needed rather than during application startup
@@ -920,47 +861,18 @@ Estas convenciones permiten tener herramientas que puedan utilizar, reutilizar, 
 
 Las convenciones requeridas son:
 
-Debe tener un constructor sin argumentos.
-
-Sus atributos de clase deben ser privados.
-
-Sus propiedades deben ser accesibles mediante métodos get y set que siguen una convención de nomenclatura estándar.
-
-Debe ser serializable.
+*Debe tener un constructor sin argumentos.
+*Sus atributos de clase deben ser privados.
+*Sus propiedades deben ser accesibles mediante métodos get y set que siguen una convención de nomenclatura estándar.
+*Debe ser serializable.
 
 Con java el escalado horizontal hay que realizarlo antes de llegar a niveles altos de CPU ya que le quita recursos a los servicios que ya estan funcionando
 
-Lectura de JSON on Spring Init
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void loadUsers() throws JsonParseException, JsonMappingException, IOException {
-	
-        ClassPathResource resource = new ClassPathResource("users.json");
-        
-		if (this.userRepository.count() == 0 && resource.exists()) {
-            userService.loadUsersFromFile(resource.getInputStream());
-        }
-    }
+Collections.frecuency(list, element) => cuenta cuantas veces un elemento se encuentra en la lista
 
+Pair | AbstractMap.SimpleEntry<Integer, String> entry = new AbstractMap.SimpleEntry<>(1, "one");
 
-	public void loadUsersFromFile(InputStream inputStream) throws JsonParseException, JsonMappingException, IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<User> users = objectMapper.readValue(inputStream, new TypeReference<List<User>>(){});        
-        for (User user : users) {
-            userRepository.save(user);
-        }
-    }
-
-	---------------------------------------------------------------
-
-	public User getUserInfo(String PPID) throws JsonParseException, JsonMappingException, IOException {
-		return objectMapper.readValue(new File(usersJsonPath + PPID + ".json"), User.class);
-	}
-
-
-	public Object getClaims() throws JsonParseException, JsonMappingException, IOException {
-		return objectMapper.readValue(this.getClass().getClassLoader().getResource("getClaims.json"), Object.class);
-	}
 
 Nunca usen "\" o "/" para concatenar directorios o directorios y files. Para esto está la variable "File.separator" que pone la correcta según el SO.
 
@@ -1067,13 +979,11 @@ http://www.jtech.ua.es/j2ee/publico/spring-2012-13/apendice_AOP-apuntes.html
 ## Architect
 
 Maven
-
 	simplifica las tareas del bin -> compilar, empaquetar, documentar, automatizar ciertas tareas y nos brinda una estructura común
 
 	
 
 XML
-
 	bien formado
 		que los nodos se abran y se cierren  
 		
@@ -1087,62 +997,48 @@ Diferencia entre Gradle y Maven: Gradle utiliza groovy
 	
 
 paquetes
-
 	evitar la colision de nombres y categorizar
 
-
 groupid
-
 	es el propietario
 
-
 pom.xml
-
 	project -> xsd -> valida el xml
-
 	
-
 classpath
-
 	ubicacion donde le indicamos a la maquina virtual que busque las clases que va a utilizar nuestra aplicacion
 
 	
-
 resources -> classpath
 
 dependencias
-
 	scope me define el alcance de la dependencia
-
 		provided
-
 			alcance en main y test pero cuando la compiles no la coloca en el classpath
 
 		compile (default)
-
 			alcance en main y test, son colocadas en el classpath cuando compilas
 
 		test
-
 			no se visibilizan en el main
 
 		runtime
-
 			alcance main y test, no se va a utilizar en tiempo de compilacion, simplemente en tiempo de ejecución
 
 Serializar
-
 	convertir objetos que estan en memoria en texto
 
+
+Una clase abstracta puede heredar o extender cualquier clase, mientras que una interfaz solamente puede extender o implementar otras interfaces.
+Una clase abstracta puede heredar de una sola clase mientras que una interfaz puede extender varias interfaces de una misma vez.
+Una clase abstracta puede tener métodos que sean abstractos o que no lo sean, mientras que las interfaces sólo y exclusivamente pueden definir métodos abstractos
+Default methods en la interfaz
+Interfaz tiene metodos public y clase abstracta pueden ser public o protected
+Una clase abstracta tiene un estado
+
+When we talk about abstract classes we are defining characteristics of an object type; specifying what an object is.
+When we talk about an interface and define capabilities that we promise to provide, we are talking about establishing a contract about what the object can do.
 	
-Lombok
-
-	Te genera getter, setter, contructor
-
-	
-En caso de tirar error al compilar, verificar que se encuentre el plugin
-
-@Data = {@Getter, @Setter, @NoArgsConstructor, @AllArgsConstructor}
 
 base de datos nosql
 
@@ -1157,7 +1053,6 @@ columns (family column) -> Cassandra / HBASE
 ide studio3t
 
 Modulos Maven
-
 	es para que multiples proyectos utilicen las mismas dependencias ( es para usar el parent en el pom )
 
 	
@@ -1173,12 +1068,84 @@ AAA
 
 Arquitectura de software
 
-@Controller -> Se usa cuando una aplicacion tiene UI
-
-ActiveMQ -> Mensajeria asincrona
-
 serverless -> aws lamda containers
 
+
+Binary Heap
+A binary heap is a heap data structure that takes the form of a binary tree and is commonly used to implement priority queues. A binary heap is a binary tree with two additional constraints:
+
+A binary heap must be a complete binary tree, which mandates that all levels of the tree need to be full except possibly the last one. Besides, it also mandates that if the last level is not complete, then all elements must be filled from left to right
+The key stored in each node is either greater than or equal to or less than or equal to the keys in the node’s children
+A heap in which the parent key is greater than or equal to the child key is known as max-heaps. Whereas if the parent key is lesser than or equals to the child key, then it is known as min-heap.
+
+
+
+Hashmap vs Hashtable 
+1. HashMap is non synchronized. It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads. 
+2. HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value. 
+3. HashMap is generally preferred over HashTable if thread synchronization is not needed
+
+
+
+String / StringBuilder / StringBuffer
+
+If a string is going to remain constant throughout the program, then use the String class object because a String object is immutable.
+If a string can change (for example: lots of logic and operations in the construction of the string) and will only be accessed from a single thread, using a StringBuilder is good enough.
+If a string can change and will be accessed from multiple threads, use a StringBuffer because StringBuffer is synchronous, so you have thread-safety.
+If you don’t want thread-safety than you can also go with StringBuilder class as it is not synchronized.
+
+
+
+Best Practice Service Interface
+public interface BpService {
+    String getHello();
+}
+
+Best Practice Service Implementation
+@Service
+public class BpServiceImpl implements BpService {
+    @Override
+    public String getHello() {
+        return "The Best Hello!";
+    }
+}
+
+## Concurrency | Asynchrony
+
+Concurrency means multiple tasks which start, run, and complete in overlapping time periods, in no specific order. Parallelism is when multiple tasks OR several part of a unique task literally run at the same time, e.g. on a multi-core processor.
+
+
+Asynchrony— This means that your program performs non-blocking operations. For example, it can initiate a request for a remote resource via HTTP and then go on to do some other task while it waits for the response to be received. It’s a bit like when you send an email and then go on with your life without waiting for a response.
+
+Parallelism— This means that your program leverages the hardware of multi-core machines to execute tasks at the same time by breaking up work into tasks, each of which is executed on a separate core. It’s a bit like singing in the shower: you’re actually doing two things at exactly the same time.
+
+Multithreading— This is a software implementation allowing different threads to be executed concurrently. A multithreaded program appears to be doing several things at the same time even when it’s running on a single-core machine. This is a bit like chatting with different people through various IM windows; although you’re actually switching back and forth, the net result is that you’re having multiple conversations at the same time.
+
+
+Asynchrony can be multi or single thread
+
+asynchronous multithreading programming flow for large scale applications
+
+Spring’s @Async annotation, indicating that it should run on a separate thread. The method’s return type is CompletableFuture<User> instead of User
+
+  @Bean
+  public Executor taskExecutor() {
+    ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+    executor.setCorePoolSize(2);
+    executor.setMaxPoolSize(2);
+    executor.setQueueCapacity(500);
+    executor.setThreadNamePrefix("GithubLookup-");
+    executor.initialize();
+    return executor;
+  }
+  
+  
+close threads if not it's going to generate a memory leak
+
+thred states: [NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED]
+
+
+Executor
 
 ## Hibernate
 
@@ -1348,9 +1315,7 @@ Settings.xml
 #### Encriptación de password
 
 <settingsSecurity>
-
  <master>{+ns3wKX7KKIHGU/ADDlVsywYXFo/d747FqFTSr9KrcQapmECa643fkwPy1GZb/MD}</master>
-
 </settingsSecurity>
 
 
@@ -1444,30 +1409,23 @@ In the startReport method of ApplicationMain, we set up the registry instance to
 
 After that, we create a simple ConsoleReporter to report our metrics from the @Timed annotated method. We should note that there are other types of reporters available.
 
-
 ## Spring
-
-Application.properties
-
-[https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
-
-server.port=8081
-
-server.servlet.context-path=/facturacion
 
 Si tiene JPA te va a pedir un datasource
 
 log.info(env.getProperty("spring.ldap.password"));
 
-log.info(password);
-
-spring core
-
 Si usas un contexto es inyección de dependencias
-
 si usas new es polimorfismo
 
 Evento ApplicationReadyEvent en la clase de inicialización
+
+### Application.properties
+
+[https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
+
+server.port=8081
+server.servlet.context-path=/facturacion
 
 ### Annotations
 
@@ -1606,11 +1564,8 @@ TODO
 ## Tomcat
 
 Redirect desde el / a una app en tomcat
-
 Crear carpeta ROOT en ../tomcat/webapps/
-
 crear archivo index.jsp con la siguiente linea 
-
 <% response.sendRedirect("/idmdash"); %>
 
 
@@ -1701,6 +1656,24 @@ console.log(ret);
 
 
 for (var i = 0, j = 50; i <= 50; i++, j--)
+
+
+Convert any value to boolean
+let number1;
+console.log(!!number1); // false
+
+const number2 = 10;
+console.log(!!number2); // true
+
+const name1 = 'Tim';
+console.log(!!name1); // true
+
+const name2 = '';
+console.log(!!name2); // false
+
+const nullValue = null;
+console.log(!!nullValue); // false
+This is especially useful If you want to avoid sending null or undefined as a value to the backend.
 
 ## Arrays
 
@@ -1932,10 +1905,79 @@ Commands: In Kafka, a setup directory inside the bin folder is a script (kafka-t
 
 	
 
+kubectl (para comunicarse con el master)
+Minikube - es para tener un kubernetes local
+
 
 Pod - grupo de containers 
+master node
+workers
 
-Minikube - es para tener un kubernetes local
+## Commands
+
+get config file from master node
+
+kubeconfig.yaml
+export KUBECONFIG=kubeconfig.yaml
+
+kubectl get nodes (ver estado de workers)
+kubectl cluster-info (ver info del cluster)
+kubectl run CLUSTER_NAME --image=DOCKER_IMAGE -p=80
+kubectl get pods (-o wide)
+kubectl describe pods
+kubectl delete pods POD_NAME
+kubectl apply -f DEPLOYMENT_FILE.yaml
+kubectl get deployments
+kubectl edit deployment DEPLOYMENT_NAME (from deployment file, metadata attribute) (cambia automaticamente)
+kubectl apply -f SERVICE_FILE.yaml
+kubectl get services
+kubectl describe services
+
+app_deployment.yaml (deployment configuration)
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: networkchuckcoffee-deployment
+  labels:
+    app: nccoffee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nccoffee
+  template:
+    metadata:
+      labels:
+        app: nccoffee
+    spec:
+      containers:
+      - name: nccoffee
+        image: thenetworkchuck/nccoffee:pourover
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+
+app_service.yaml (service configuration)
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: coffee-service
+  annotations:
+    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
+  labels:
+    app: coffee-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nccoffee
+  sessionAffinity: None
 
 
 # Linux
@@ -2246,7 +2288,8 @@ Patrones de construccion
 
 Inicialización y configuración de objetos.
 
-Builder: Separar la construcción de un objeto complejo de su representación para que el mismo proceso de construcción puede crear diferentes representaciones.
+## Builder 
+Separar la construcción de un objeto complejo de su representación para que el mismo proceso de construcción puede crear diferentes representaciones.
 
 Nos permite crear un objeto que está compuesto por muchos otros objetos. Sólo el "Builder" conoce a detalle las clases concretas de los objetos que serán creados, nadie más.
 
@@ -2256,15 +2299,19 @@ A diferencia de otros patrones creacionales que construyen productos de una sola
 
 Aplicación: Usamos el patrón Builder cuando queremos...
 
+se utiliza cuando tenes varios atributos o varios atributos opcionales
+
 Construir un objeto compuesto de otros objetos.
 
 Que la creación de las partes de un objeto sea independiente del objeto principal.
 
 Ocultar la creación de las partes de un objeto del cliente, de esta manera no existe dependencia entre el cliente y las partes.
 
-Abstract Factory
 
-Factory Method
+## Factory pattern
+
+cuando no necesitas saber tantos datos para crear al objeto ya que se pueden crear distintas clases hijas
+
 
 Prototype
 
@@ -3221,39 +3268,26 @@ knownSize will return the number of elements if the traversable has a finite end
 Lista sin duplicados
 
 val aNewSet = mySet + "Illinois"
-
 val aNewSet = mySet -- List("Michigan", "Ohio")
-
 mySet("MI") == mySet.contains("MI")
-
 val aNewSet = mySet1 intersect mySet2 // Se puede utilizar &
-
 val aNewSet = mySet1 union mySet2 // NOTE: You can also use the "|" operator
-
 val aNewSet = mySet1 diff mySet2
 
 
 ### Tuplas
 
 val tuple = ("apple", "dog")
-
 val fruit = tuple._1 - "apple"
-
 val animal = tuple._2 - "dog"
 
+# SOLID
 
-# Selenium
-
-WebDriverWait wait = new WebDriverWait(driver, 10);
-
-WebElement elemento = wait.until(ExpectedConditions.presenceofElemenLocated(By.);
-
-th a.filter {
-
-    visibility: inherit;
-
-}
-
+Single Responsability - Cada clase deberia tener una responsabilidad
+Open Closed - Una entidad debe estar abierta para su expansion pero cerrada para su modificacion. Si se requiere agregar una nueva funcionalidad no se deberia modificar el codigo existente. (Herencia / polimorfismo)
+Liskov Substitution - Toda clase que es hija de una clase debe poder usarse como la clase padre
+Interface Segregation - Tener pequeñas clases especializadas
+Dependency Inversion - Los modulos de alto nivel no deberian depender de modulos de menor nivel (abstraccion) (ej que base de datos utilizamos)
 
 # SQL
 
