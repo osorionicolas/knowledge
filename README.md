@@ -2701,8 +2701,6 @@ Remove 2 HTML Tags
 
 sbt new
 
-sbt tasks > run
-
 en 2.6 se depreco el activator
 
 classes vs case classes
@@ -2760,25 +2758,7 @@ https://stackoverflow.com/questions/39626579/is-there-a-way-to-combine-docker-im
 
 https://hub.docker.com/r/broadinstitute/scala-baseimage  
 
-Scala - Play
-
-SimpleRouter
-
-case GET(s"Hola") = la "s" es de string
-
-case GET(p"/hola") = la "p" es de path pattern
-
-Extractor
-
-Implicits
-
-for comprehension
-
-EitherT - Cats
-
 ## General
-
-obj.getOrElse("test") == obj gerOrElse "test"
 
 Para comparar un option con un valor utilizar contains
 
@@ -2787,8 +2767,6 @@ Unit == void
 eq checks for reference - x eq y
 
 Default es public (No tiene keyword public)
-
-Pueden tener valores por defecto en los constructores de las clases
 
 val someNumbers = Range(0, 10)  == val someNumbers = 0 until 10 //  De 0 a 9 inclusive
 
@@ -3183,7 +3161,6 @@ a.reduceLeft(_ + _) - todos los valores
     foldLeft(1) - se aplica al resultado final / es como un reduce
 
 	
-
 init will return the rest of the collection without the last:
 
 	
@@ -3191,8 +3168,6 @@ init will return the rest of the collection without the last:
 val it = list grouped 3
 
 agrupo de a tantos
-
-	
 
 	
 
@@ -3284,9 +3259,13 @@ val animal = tuple._2 - "dog"
 # SOLID
 
 Single Responsability - Cada clase deberia tener una responsabilidad
+	
 Open Closed - Una entidad debe estar abierta para su expansion pero cerrada para su modificacion. Si se requiere agregar una nueva funcionalidad no se deberia modificar el codigo existente. (Herencia / polimorfismo)
+	
 Liskov Substitution - Toda clase que es hija de una clase debe poder usarse como la clase padre
+	
 Interface Segregation - Tener pequeñas clases especializadas
+	
 Dependency Inversion - Los modulos de alto nivel no deberian depender de modulos de menor nivel (abstraccion) (ej que base de datos utilizamos)
 
 # SQL
