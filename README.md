@@ -2608,6 +2608,46 @@ Component.propTypes = {
 
 }
 
+https://reactpatterns.com/#contents
+
+
+Specify default values for props with defaultProps.
+
+function Greeting(props) {
+  return <div>Hi {props.name}!</div>;
+}
+Greeting.defaultProps = {
+  name: "Guest",
+};
+
+
+
+function MyButton({ className, ...props }) {
+  let classNames = ["btn", className].filter(Boolean).join(" ").trim();
+
+  return <button className={classNames} {...props} />;
+}
+
+
+
+// option 1: extra div
+return <div>{children}</div>;
+
+// option 2: unhelpful errors
+return children;
+It's best to treat children as an opaque data type. React provides React.Children for dealing with children appropriately.
+
+return React.Children.only(this.props.children);
+
+
+
+¿Cómo implemento shouldComponentUpdate?
+Puedes envolver un componente de función con React.memo, para comparar sus props superficialmente.
+
+const Button = React.memo((props) => {
+  // Tu Componente
+});	
+
 
 ## Redux
 
