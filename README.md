@@ -12,6 +12,7 @@ Table of Contents
 - [Electron](#electron)
 - [ELK](#elk)
 - [Firebase](#firebase)
+- [Flutter](#flutter)
 - [Github](#github)
 - [Go](#go)
 - [HTML](#html)
@@ -532,6 +533,9 @@ firebase target:apply hosting buenaSonrisa buenasonrisa
 
 firebase deploy --only hosting
 
+# Flutter
+
+flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8989
 
 # Github
 
