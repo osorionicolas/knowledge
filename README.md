@@ -1,7 +1,6 @@
 Table of Contents
 =================
 
-- [Access Manager](#access-manager)
 - [Akka](#akka)
 - [Angular](#angular)
 - [Arduino](#arduino)
@@ -97,15 +96,6 @@ Table of Contents
 - [Windows](#windows)
   * [Red](#red)
 - [General](#general)
-
-
-# Access Manager
-
-
-*   Resource Owner habilita el grant_type password
-*   Microfocus - Cuando probas grant_type password no devuelve id_token
-*   Llamar al endpoint de userinfo para desencriptar el access_token
-*   Si uso grant type password no genera una sesión en el access manager, si te devuelve un token
 
 
 # Akka
