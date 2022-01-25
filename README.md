@@ -537,9 +537,34 @@ This will delete all merged branches that you have locally except for master or 
 git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop)\s*$)" | command xargs -n 1 git branch -d
 
 
-diferencia entre svn y git
+git checkout -f tags/v<tag>
+git describe --tags
+git branch
 
-svn es centralizado
+-------
+
+git checkout <Repo Original>
+git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git BRANCH_NAME
+git checkout <Repo Feature>
+git merge <Repo Original>
+
+
+git pull https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git BRANCH_NAME
+git stash save --keep-index
+git stash drop
+
+
+
+Actualizar fork
+
+git remote add upstream https://github.com/whoever/whatever.git
+git fetch upstream
+git checkout develop
+git rebase upstream/develop
+If you don't want to rewrite the history of your master branch, (for example because other people may have cloned it) then you should replace the last command with git merge upstream/master. However, for making further pull requests that are as clean as possible, it's probably better to rebase.
+If you've rebased your branch onto upstream/master you may need to force the push in order to push it to your own forked repository on GitHub. You'd do that with:
+git push -f origin master
+
 
 
 # Go
@@ -1217,15 +1242,16 @@ Settings.xml
 	<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
 		<servers>
 			<server>
-			  <id>identicum.releases</id>
-			  <username>nosorio</username>
-			  <password>{6f/NfyKK42wHzSwSjXAP6om9j1xNO2pB2tVWqgu3ImU=}</password>
+			  <id>releases</id>
+			  <username>username</username>
+			  <password>ENCRYPTED_PASSWORD</password>
 			</server>
 			<server>
-			  <id>identicum.snapshots</id>
-			  <username>nosorio</username>
-			  <password>{6f/NfyKK42wHzSwSjXAP6om9j1xNO2pB2tVWqgu3ImU=}</password>
+			  <id>snapshots</id>
+			  <username>username</username>
+			  <password>ENCRYPTED_PASSWORD</password>
 			</server>
+			<server>
 			<server>
 				<id>localhost</id>
 				<username>admin</username>
@@ -1274,10 +1300,15 @@ Settings.xml
 
 #### Encriptación de password
 
-<settingsSecurity>
- <master>{+ns3wKX7KKIHGU/ADDlVsywYXFo/d747FqFTSr9KrcQapmECa643fkwPy1GZb/MD}</master>
-</settingsSecurity>
+mvn --encrypt-master-password <password>
 
+${user.home}/.m2/settings-security.xml
+		
+	<settingsSecurity>
+	 <master>ENCRYPTED_PASSWORD</master>
+	</settingsSecurity>
+
+mvn --encrypt-password <password>
 
 ## Metrics
 
