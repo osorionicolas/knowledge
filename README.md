@@ -9,7 +9,6 @@ Table of Contents
 - [Big O](#big-o)
 - [CSS](#css)
 - [Electron](#electron)
-- [ELK](#elk)
 - [Firebase](#firebase)
 - [Flutter](#flutter)
 - [Github](#github)
@@ -472,39 +471,6 @@ var child = require(‘child_process’).spawn( ‘java’, [‘-jar’, jarPath
 var kill = require(‘tree-kill’);
 
 kill(child.pid);
-
-
-# ELK
-
-sysctl -w vm.max_map_count=262144
-
-docker pull sebp/elk
-
-docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk
-
-https://elk-docker.readthedocs.io/
-
-docker-compose
-
-elk:
-
-  image: sebp/elk
-
-  ports:
-
-    - "5601:5601"
-
-    - "9200:9200"
-
-    - "5044:5044"
-
-docker-compose up elk
-
-filebeat
-
-docker pull docker.elastic.co/beats/filebeat:7.5.1
-
-docker run docker.elastic.co/beats/filebeat:7.5.1 setup -E setup.kibana.host=ip:5601 -E output.elasticsearch.hosts=["ip:9200"]
 
 
 # Firebase
