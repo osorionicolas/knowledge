@@ -565,6 +565,33 @@ If you don't want to rewrite the history of your master branch, (for example bec
 If you've rebased your branch onto upstream/master you may need to force the push in order to push it to your own forked repository on GitHub. You'd do that with:
 git push -f origin master
 
+	
+	
+	
+git remote add upstream https://github.com/decidir/
+git fetch upstream
+git checkout upstream/master
+git checkout -b master / git checkout master
+git merge (tag)
+git push --set-upstream origin master
+hacer pr
+
+crear tag
+git fetch upstream
+(git stash)
+git checkout upstream/master
+git checkout -b master / git checkout master
+git tag -a (tag) -m (mensaje)
+git push upstream (tag)
+
+
+
+
+
+cuando se hizo squash merge
+git merge --strategy-option ours (edited) 
+así mergea, y todo conflicto que haya le pone lo que haya en develop
+desde develop
 
 
 # Go
