@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - master
+      - main
 env:
   CONTAINER_IMAGE: secretcolossus/${{github.event.repository.name}}:latest
 jobs:
