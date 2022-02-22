@@ -14,7 +14,6 @@ Table of Contents
 - [Github](#github)
 - [Go](#go)
 - [HTML](#html)
-- [Ionic](#ionic)
 - [Java](#java)
   * [Logging](#logging)
     + [MDC](#mdc)
@@ -495,12 +494,19 @@ flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8989
 
 # Github
 
+Crear PR con commits especificos
+
+# If you haven't set up your remote yet, run this line:
+# git remote add upstream https://github.com/konradjk/exac_browser.git
+git fetch --all                                   # Get the latest code
+git checkout -b my-single-change upstream/master  # Create new branch based on upstream/master
+git cherry-pick b50b2e7                           # Cherry pick the commit you want
+git push -u origin my-single-change               # Push your changes to the remote branch
+
 Merge
 
 Note that you always merge some branch into the one you're currently at.
-
 As we've already checked out master, we can now git merge change_alice.
-
 
 git log
 git log --oneline # more succinct output
@@ -514,10 +520,11 @@ git diff branch1..branch2
 
 
 git switch branch-name     # new syntax (as of Git 2.23)
+git switch -c branch-name  # Move changes to new branch
 git checkout branch-name   # old syntax
 
 
-git switch - 			   # go back to the branch I was on
+git switch - 	           # go back to the branch I was on
 
 git reset --hard HEAD      # This will reset your local directory to match the latest commit and discard unstaged changes
 git reset --hard HEAD~1    # undo the last commit and rewrite history
@@ -634,83 +641,6 @@ contenido editable:
 	<div class="edit" contenteditable>
 		You can edit me...and add as much ye wish!
 	</div>
-
-
-# Ionic
-
-ionic start "appName" tabs / blank (--no-git)
-
-ionic cordova run android --device | ionic capacitor run android -l --external
-
-ionic cordova build android
-
-ionic cordova platform remove android
-
-ionic cordova platform add android
-
-ionic cordova resources --icon
-
-ionic cordova resources --splash
-
-npm install @angular/fire firebase --save
-
-ionic serve --external --disableHostCheck
-
-audio
-
-ionic cordova plugin add cordova-plugin-nativeaudio
-
-npm install @ionic-native/native-audio
-
-Notifications
-
-https://github.com/katzer/cordova-plugin-local-notifications
-
-ionic cordova plugin add cordova-plugin-local-notification
-
-npm install @ionic-native/local-notifications
-
-npm install chart.js --save
-
-platform.ready()
-
-Cordova Android duplicated uses-feature from two plugins
-
-Go to cordova-plugin-qrscanner->plugin.xml
-
-comment out or remove content of the section
-
-<config-file target="AndroidManifest.xml" parent="/*">
-
-para instalar mas de una aplicacion ionic en el celular cambiar en el config.xml el id del widget
-
-<preference name="ShowSplashScreenSpinner" value="false"/>
-
-platform/android/app/build.gradle
-
-    defaultConfig{
-	multiDexEnabled true
-    }
-
-
-platforms/android/app/src/main/androidmanifest.xml
-
-android:windowSoftInputMode="adjustResize">
-
-ionic serve --all
-
-git push ionic master
-
-si er_address_unrecheable -> firewall
-
-
-    console.log(this.screenOrientation.type);
-    this.screenOrientation.onChange().subscribe(
-      () => {
-        console.log("Orientation Changed " + this.screenOrientation.type);
-        this.orientation = this.screenOrientation.type;
-      }
-    );
 
 
 # Java
