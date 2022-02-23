@@ -1,17 +1,19 @@
+name: Build and push Docker images
+
 on:
   push:
     branches:
       - main
-env:
-  CONTAINER_IMAGE: secretcolossus/${{github.event.repository.name}}:latest
+
 jobs:
-  build-push:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Docker Hub login
-        run: docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}}
-      - name: Build image
-        run: docker build -t $CONTAINER_IMAGE .
-      - name: Push to Docker Hub
-        run: docker push $CONTAINER_IMAGE
+      - uses: actions/checkout@master
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: secretcolossus/${{github.event.repository.name}}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tags: "latest"
