@@ -3549,6 +3549,10 @@ Create a new DWORD value named DisplayParameters and set to 1
 Si pones un archivo en C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup  se ejecuta en el inicio
 
 
+Copiar nombres de todos los archivos del directorio a un archivo de texto
+dir /b > files.txt
+
+
 ## Red
 
 arp -a
