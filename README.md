@@ -453,6 +453,9 @@ auto (This is the one we are looking at. It will only render this element once t
     content-visibility:auto;
 }
 
+font-size: clamp(3rem, 5vw + 1rem, 6rem);
+heigh: 100dvh / 100svh
+
 
 # Electron
 
