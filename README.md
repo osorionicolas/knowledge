@@ -8,7 +8,6 @@ Table of Contents
 - [AWS](#aws)
 - [Big O](#big-o)
 - [CSS](#css)
-- [Electron](#electron)
 - [Firebase](#firebase)
 - [Flutter](#flutter)
 - [Github](#github)
@@ -456,23 +455,6 @@ auto (This is the one we are looking at. It will only render this element once t
 font-size: clamp(3rem, 5vw + 1rem, 6rem);
 
 heigh: 100dvh / 100svh
-
-
-# Electron
-
-// Generar .exe
-
-electron-packager . — overwrite
-
-// Correr aplicacion java
-
-var jarPath = app.getAppPath() + ‘\\student-portal-api.jar’;
-
-var child = require(‘child_process’).spawn( ‘java’, [‘-jar’, jarPath, ‘’] );
-
-var kill = require(‘tree-kill’);
-
-kill(child.pid);
 
 
 # Firebase
