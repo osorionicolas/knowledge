@@ -636,8 +636,6 @@ contenido editable:
 
 InstaceOf → Saber si pertenece a una determinada clase
 
-clase custom para excepcion tiene que heredar de exception -> extends exception
-
 ex.printStackTrace();
 
 exception.getMessage("mensaje de error") -> parte del stackTrace
