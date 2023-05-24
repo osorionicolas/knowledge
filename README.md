@@ -852,6 +852,13 @@ Monitoring - Hystrix Dashboard + Turbine - En entorno productivo es recomendable
 Log Management
 
 Security
+	
+
+## Jackson
+	
+JSON view
+
+https://mkyong.com/java/jackson-jsonview-examples/
 
 
 ## Logging
