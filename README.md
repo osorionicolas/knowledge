@@ -8,6 +8,7 @@ Table of Contents
 - [AWS](#aws)
 - [Big O](#big-o)
 - [CSS](#css)
+- [Data Structures](#data-structures)
 - [Firebase](#firebase)
 - [Flutter](#flutter)
 - [Github](#github)
@@ -265,6 +266,12 @@ Formas un poquito más avanzadas:
 
 # Big O
 
+BigO
+- Remove constants
+- Growth is with respect to the input
+- Worst case
+
+
 coste lineal = O(N)
 
 array - acceso por indice es constante pero insercion de datos lineal
@@ -455,6 +462,105 @@ auto (This is the one we are looking at. It will only render this element once t
 font-size: clamp(3rem, 5vw + 1rem, 6rem);
 
 heigh: 100dvh / 100svh
+
+
+# Data Structures
+
+ArrayList - if you remove or add in the front you have to shift everything
+ArrayList are good for get operations / random access and insert / remove at the end, but sucks on insert / remove on the front (shift / unshift)
+LinkedList is good for insert or remove in the front or the back, but sucks on get operations
+
+ArrayBuffer / RingBuffer - it’s a list with null on both sides, the head and the tail are somewhere in the middle, so if you add o remove elements those actions are constants O(1). Uses the modulo and can if you have to add new values and there is no space in the end of the list it goes to the beginning of it. The problem is when the tail exceeds the head
+
+
+JS Array is an ArrayList underneath the hood
+
+
+## Recursion
+- Base case
+- Recurse
+    - Pre
+    - Recurse
+    - Post
+
+## Trees
+
+Pre-order: root at the beginning
+In-order: root at the middle
+Post-order: root at the end
+
+
+Depth-First: Stack - Recursion - preserves the shape of the traversal (tree)
+Breath-First: Queue
+
+
+Binary Search Tree = BST
+Only rule: left side has to be less or equal and right side has to be greater than
+Logn if it’s balanced or n if it’s not
+
+
+## Heap
+Heap = Priority Queue
+
+Maintain week order
+It’s a complete tree, self balancing
+It can be used for priority
+
+O(logn)
+
+Must adjust the tree after add or delete operations
+No traversing the tree
+
+MinHeap means that the root has to be the smallest value and MaxHeap means that the root has to be the Biggest value
+
+Represent as an array
+
+Down:
+2i + 1
+2i + 2
+
+Up:
+(i-1) / 2
+
+
+## Trie tree
+
+Try trees / prefix / digital tree
+Auto complete tree
+O(1)
+Root has no value
+
+
+## Graphs
+Can be represented as a list or as a matrix
+Non negative weights
+
+
+## Maps
+
+It’s and ArrayList
+Needs a hash function to hash the key
+Hashmap search = O(1)
+
+
+Load factor: amount of data points vs amount of storage (data.len / storage.capacity)
+Key: value that is hashable and is used to look up data. The hash has to be consistent
+Value: value associated with the key
+Collision: when 2 keys map to the same cell
+
+
+## LRU Cache
+LRU = Least Recently Used
+It’s a Hashmap with its value is a pointer to another item
+Composition of hash map + Double linked list
+The head is when we update the cache to the most recently used item and the tail is when we need to remove from the cache
+
+
+## Interview
+
+I in fact, even have a question that Netflix I used to ask all the time,which was implement an async request queue,in which only three requests can be out at any one time.Or three async operations can be out at any one time.And when they inevitably use an array, or use the JavaScript brackets,I'd go, why would you not want to use those?And they'd say, well, I'm using them because you can do shift and non-shift.And I go, okay, well, I mean if you have a million items in there,do you still use them?And they go, yeah, why not?And I know for a fact they haven't thought about the fact, that when you remove oradd to the front, you are fundamentally having to shift everything
+
+Obviously, we couldn't get the median very easily right now because we don't actuallyhave that available.There is a trick to get the median if you use two heaps.We're not gonna do that, it's a stupid Google interview question
 
 
 # Firebase
