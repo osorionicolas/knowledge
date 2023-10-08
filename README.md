@@ -449,26 +449,25 @@ Una buena forma de practicar es revisar código escrito por nosotros mismos o po
 
 # CSS
 
-The content-visibility has three values we can use:
+The content-visibility has three values we can use:  
 
-visible (no effect, basically how it was before)
-hidden (a mix between display: none and visibility: hidden, it starts on display hidden, afterwords becomes visibility hidden)
-auto (This is the one we are looking at. It will only render this element once the browser needs it!)
+visible (no effect, basically how it was before)  
+hidden (a mix between display: none and visibility: hidden, it starts on display hidden, afterwords becomes visibility hidden)  
+auto (This is the one we are looking at. It will only render this element once the browser needs it!)  
 
-.element {
-    content-visibility:auto;
-}
+.element {  
+    content-visibility:auto;  
+}  
 
-font-size: clamp(3rem, 5vw + 1rem, 6rem);
-
-heigh: 100dvh / 100svh
+font-size: clamp(3rem, 5vw + 1rem, 6rem);  
+heigh: 100dvh / 100svh  
 
 
 # Data Structures
 
-ArrayList - if you remove or add in the front you have to shift everything
-ArrayList are good for get operations / random access and insert / remove at the end, but sucks on insert / remove on the front (shift / unshift)
-LinkedList is good for insert or remove in the front or the back, but sucks on get operations
+ArrayList - if you remove or add in the front you have to shift everything  
+ArrayList are good for get operations / random access and insert / remove at the end, but sucks on insert / remove on the front (shift / unshift)  
+LinkedList is good for insert or remove in the front or the back, but sucks on get operations  
 
 ArrayBuffer / RingBuffer - it’s a list with null on both sides, the head and the tail are somewhere in the middle, so if you add o remove elements those actions are constants O(1). Uses the modulo and can if you have to add new values and there is no space in the end of the list it goes to the beginning of it. The problem is when the tail exceeds the head
 
