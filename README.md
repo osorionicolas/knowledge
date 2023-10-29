@@ -459,8 +459,9 @@ auto (This is the one we are looking at. It will only render this element once t
     content-visibility:auto;  
 }  
 
-font-size: clamp(3rem, 5vw + 1rem, 6rem);  
-heigh: 100dvh / 100svh  
+font-size: clamp(3rem, 5vw + 1rem, 6rem)
+calc(16px + 8 * ((100vw - 320px) / 1600)) 
+heigh: 100dvh / 100svh 
 
 
 # Data Structures
@@ -484,9 +485,9 @@ JS Array is an ArrayList underneath the hood
 
 ## Trees
 
-Pre-order: root at the beginning
-In-order: root at the middle
-Post-order: root at the end
+Pre-order: root at the beginning 
+In-order: root at the middle 
+Post-order: root at the end 
 
 
 Depth-First: Stack - Recursion - preserves the shape of the traversal (tree)
