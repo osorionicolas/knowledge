@@ -459,9 +459,9 @@ auto (This is the one we are looking at. It will only render this element once t
     content-visibility:auto;  
 }  
 
-font-size: clamp(3rem, 5vw + 1rem, 6rem) 
-calc(16px + 8 * ((100vw - 320px) / 1600)) 
-heigh: 100dvh / 100svh 
+font-size: clamp(3rem, 5vw + 1rem, 6rem)  
+calc(16px + 8 * ((100vw - 320px) / 1600))  
+heigh: 100dvh / 100svh  
 
 
 # Data Structures
@@ -516,29 +516,29 @@ MinHeap means that the root has to be the smallest value and MaxHeap means that 
 Represent as an array
 
 Down:
-2i + 1
-2i + 2
+2i + 1  
+2i + 2  
 
 Up:
-(i-1) / 2
+(i-1) / 2  
 
 
 ## Trie tree
 
-Try trees / prefix / digital tree
-Auto complete tree
-O(1)
-Root has no value
+Try trees / prefix / digital tree  
+Auto complete tree  
+O(1)  
+Root has no value  
 
 
 ## Graphs
-Can be represented as a list or as a matrix
-Non negative weights
+Can be represented as a list or as a matrix  
+Non negative weights  
 
 
 ## Maps
 
-It’s and ArrayList
+It’s and ArrayList  
 Needs a hash function to hash the key
 Hashmap search = O(1)
 
