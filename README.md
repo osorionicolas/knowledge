@@ -3698,9 +3698,6 @@ Auto TOC generator - https://ecotrust-canada.github.io/markdown-toc/
 Math.ceil(value/5)*5 -> obtener el proximo numero multiplo de 5
 
 
-Gson gson = new GsonBuilder().setPrettyPrinting().create();
-return gson.toJson(this);
-
 Semaphore
 
 
