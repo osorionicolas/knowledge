@@ -275,10 +275,15 @@ BigO
 coste lineal = O(N)
 
 array - acceso por indice es constante pero insercion de datos lineal
+
 list - acceso lineal pero insercion de datos constante
+
 tabla de hash - acceso constante, la clave es una posicion de memoria, la insercion de datos tambien es constante
+
 pilas / colas - son grafos, pilas LIFO, cola FIFO
+
 grafos / arboles - relaciones entre entidades
+
 min heap / max heap - colas de prioridads que 
 
 ¿Qué es la notación Big O?
