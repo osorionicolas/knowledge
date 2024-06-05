@@ -286,7 +286,7 @@ grafos / arboles - relaciones entre entidades
 
 min heap / max heap - colas de prioridads que 
 
-¿Qué es la notación Big O?
+## ¿Qué es la notación Big O?
 
 La notación Big O es uno de esos temas que todos deberíamos de conocer como Ingenieros de Software, sin embargo en ocasiones puede resultar confuso o no necesario porque -qué importa, mi código ya funciona!.
 
@@ -296,7 +296,7 @@ Definición
 
 La notación Big O es la representación relativa de la complejidad de un algoritmo.
 
-¿Qué significa?
+## ¿Qué significa?
 
 representación: Big O trata de simplificar la comparación entre algoritmos a una sola variable
 
@@ -304,9 +304,7 @@ relativa: esta comparación solo tiene sentido si se trata de algoritmos similar
 
 complejidad: ¿cómo se comporta el algoritmo cuando la entrada de datos aumenta?, ¿necesita más memoria? ¿necesita más tiempo?
 
-Diferentes complejidades
-
-Diferentes complejidades
+## Diferentes complejidades
 
 En la siguiente sección veremos diferentes complejidades para los algoritmos, esta no es una lista exhaustiva, pero contiene las complejidades más habituales.
 
