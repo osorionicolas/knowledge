@@ -489,30 +489,30 @@ JS Array is an ArrayList underneath the hood
 
 ## Trees
 
-Pre-order: root at the beginning 
-In-order: root at the middle 
+Pre-order: root at the beginning \
+In-order: root at the middle \
 Post-order: root at the end 
 
 
-Depth-First: Stack - Recursion - preserves the shape of the traversal (tree)
+Depth-First: Stack - Recursion - preserves the shape of the traversal (tree) \
 Breath-First: Queue
 
 
-Binary Search Tree = BST
-Only rule: left side has to be less or equal and right side has to be greater than
+Binary Search Tree = BST \
+Only rule: left side has to be less or equal and right side has to be greater than \
 Logn if it’s balanced or n if it’s not
 
 
 ## Heap
 Heap = Priority Queue
 
-Maintain week order
-It’s a complete tree, self balancing
+Maintain week order \
+It’s a complete tree, self balancing \
 It can be used for priority
 
 O(logn)
 
-Must adjust the tree after add or delete operations
+Must adjust the tree after add or delete operations \
 No traversing the tree
 
 MinHeap means that the root has to be the smallest value and MaxHeap means that the root has to be the Biggest value
@@ -529,35 +529,35 @@ Up:
 
 ## Trie tree
 
-Try trees / prefix / digital tree  
-Auto complete tree  
-O(1)  
-Root has no value  
+Try trees / prefix / digital tree \
+Auto complete tree \
+O(1) \
+Root has no value \
 
 
 ## Graphs
-Can be represented as a list or as a matrix  
-Non negative weights  
+Can be represented as a list or as a matrix \
+Non negative weights
 
 
 ## Maps
 
-It’s and ArrayList  
-Needs a hash function to hash the key
-Hashmap search = O(1)
+It’s and ArrayList \
+Needs a hash function to hash the key \
+Hashmap search = O(1) \
 
 
-Load factor: amount of data points vs amount of storage (data.len / storage.capacity)
-Key: value that is hashable and is used to look up data. The hash has to be consistent
-Value: value associated with the key
-Collision: when 2 keys map to the same cell
+Load factor: amount of data points vs amount of storage (data.len / storage.capacity) \
+Key: value that is hashable and is used to look up data. The hash has to be consistent \
+Value: value associated with the key \
+Collision: when 2 keys map to the same cell \
 
 
 ## LRU Cache
-LRU = Least Recently Used
-It’s a Hashmap with its value is a pointer to another item
-Composition of hash map + Double linked list
-The head is when we update the cache to the most recently used item and the tail is when we need to remove from the cache
+LRU = Least Recently Used \
+It’s a Hashmap with its value is a pointer to another item \
+Composition of hash map + Double linked list \
+The head is when we update the cache to the most recently used item and the tail is when we need to remove from the cache \
 
 
 ## Interview
@@ -591,20 +591,22 @@ flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8989
 
 Crear PR con commits especificos
 
-# If you haven't set up your remote yet, run this line:
-# git remote add upstream https://github.com/konradjk/exac_browser.git
-git fetch --all                                   # Get the latest code
-git checkout -b my-single-change upstream/master  # Create new branch based on upstream/master
-git cherry-pick b50b2e7                           # Cherry pick the commit you want
-git push -u origin my-single-change               # Push your changes to the remote branch
+If you haven't set up your remote yet, run this line:
+
+git remote add upstream https://github.com/konradjk/exac_browser.git
+
+git fetch --all                                   # Get the latest code \
+git checkout -b my-single-change upstream/master  # Create new branch based on upstream/master \
+git cherry-pick b50b2e7                           # Cherry pick the commit you want \
+git push -u origin my-single-change               # Push your changes to the remote branch \
 
 Merge
 
-Note that you always merge some branch into the one you're currently at.
+Note that you always merge some branch into the one you're currently at. \
 As we've already checked out master, we can now git merge change_alice.
 
-git log
-git log --oneline # more succinct output
+git log \
+git log --oneline # more succinct output \
 git log --graph # with a visual graph of branches
 
 
@@ -614,9 +616,9 @@ git reflog # reflog is basically your safety net after running "scary" commands 
 git diff branch1..branch2
 
 
-git switch branch-name     # new syntax (as of Git 2.23)
-git switch -c branch-name  # Move changes to new branch
-git checkout branch-name   # old syntax
+git switch branch-name     # new syntax (as of Git 2.23) \
+git switch -c branch-name  # Move changes to new branch \
+git checkout branch-name   # old syntax \
 
 
 git switch - 	           # go back to the branch I was on
