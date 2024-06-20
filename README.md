@@ -484,7 +484,6 @@ ArrayBuffer / RingBuffer - it’s a list with null on both sides, the head and t
 
 
 JS Array is an ArrayList underneath the hood
-</details>
 
 <details>
 <summary><h2>Recursion</h2></summary>
@@ -1633,8 +1632,8 @@ crear archivo index.jsp con la siguiente linea
 <% response.sendRedirect("/idmdash"); %>
 </details>
 
-
-# Javascript
+<details>
+<summary><h1>Javascript</h1></summary>
 
 The bitwise OR operator can also be used to remove any amount of digits from the end of an integer.
 
@@ -1914,8 +1913,10 @@ Refactor
 	    .then(addSauce)
 	}
 
+</details>
 
-# Kafka
+<details>
+<summary><h1>Kafka</h1></summary>
 
 Producers -> Envían data (Topic, msg)
 
@@ -1960,9 +1961,10 @@ Producer: Creates a record and publishes it to the broker.
 Consumer: Consumes records from the broker.
 
 Commands: In Kafka, a setup directory inside the bin folder is a script (kafka-topics.sh), using which, we can create and delete topics and check the list of topics. Go to the Kafka home directory.
+</details>
 
-
-# Kubernetes
+<details>
+<summary><h1>Kubernetes</h1></summary>
 
 [https://medium.com/@bhargavshah2011/hello-world-on-kubernetes-cluster-6bec6f4b1bfd](https://medium.com/@bhargavshah2011/hello-world-on-kubernetes-cluster-6bec6f4b1bfd)
 
@@ -2043,9 +2045,10 @@ spec:
   selector:
     app: nccoffee
   sessionAffinity: None
+</details>
 
-
-# Linux
+<details>
+<summary><h1>Linux</h1></summary>
 
 HISTTIMEFORMAT="%d/%m/%y %T "
 
@@ -2251,9 +2254,10 @@ Descomprimir: unzip archivo.zip
 Copiado de archivos con distinto nombre
 
 cp /tmp/file.txt{,.bkp}	
+</details>
 
-
-# Machine Learning
+<details>
+<summary><h1>Machine Learning</h1></summary>
 
 Label is the variable we are predicting.
 
@@ -2332,14 +2336,18 @@ D is a data set containing many labeled examples, which are  pairs.
 N is the number of examples in .
 
 Loss - es la distancia entre el punto y la recta, todos los puntos que estan sobre la recta son 0^2 y los que no, son distancial^2, la suma de todos los valores se divide por la cantidad de puntos
+</details>
 
-# Memoization
+<details>
+<summary><h1>Memoization</h1></summary>
 
 This technique involves using an Object in javascript or any other data structure with key-value pairs (in other languages) to temporarily store some data while the algorithm is being executed. A key-value pair data structure is used because keys are unique so the same key won't be generated more than once. So if certain data has to be accessed multiple times, it can be stored in only one run in the form of key value pairs and then it can be accessed multiple times without the need of regenerating it. When this technique is not used, identical data is created over and over again which makes the algorithm slower.
 
 This approach also allows to add some logic that helps get the solution at the same time we access the data of the object.
+</details>
 
-# Patrones de diseño
+<details>
+<summary><h1>Patrones de diseño</h1></summary>
 
 Patrones de construccion
 
@@ -2475,9 +2483,10 @@ class RepositoryProxy implements IRepository{
 Listo dotamos de funcionalidad a la lectura de datos sin necesidad de modificar la clase original que realiza las operaciones crud tanto el proxy como el objeto al cual esta ayudando el proxy reciben los mismos datos en sus métodos (la query) de manera que por un lado el repositorio consume esa query y cumple su función y por otro el proxy hace la suma de 5 a la edad de la persona, sin tocar el comportamiento de lectura original, el cual se pudo llevar a cabo gracias al método implementado en el proxy que sigue recibiendo la cadena que el objeto repository usa para llevar a cabo su lectura.
 
 Ahora si se desea obtener la edad que tendrá en 5 años una persona obtenida de la base de datos basta con instanciar el proxy en donde necesitemos y realizar la consulta. el repository donde sea que deseemos seguir obteniendo una persona sin cambiar nada podrá seguir funcionando.
+</details>
 
-
-# Protocolos
+<details>
+<summary><h1>Protocolos</h1></summary>
 
 POP3: Guarda los mails en la computadora
 
@@ -2493,18 +2502,20 @@ REST
 	El verbo POST es el único verbo no idempotente porque modifica el estado del sistema. El resto de los verbos se pueden ejecutar n veces y no lo modifican (puede haber excepciones como el put)
 
 [http://www.codigomaestro.com/redes/cual-es-la-diferencia-entre-los-protocolos-tcp-udp/](http://www.codigomaestro.com/redes/cual-es-la-diferencia-entre-los-protocolos-tcp-udp/)
+</details>
 
-
-# Protocol Buffers
+<details>
+<summary><h1>Protocol Buffers</h1></summary>
 
 Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.
 
 Protocol buffers currently supports generated code in Java, Python, Objective-C, and C++. With our new proto3 language version, you can also work with Go, JavaNano, Ruby, and C#, with more languages to come.
 
 Serializador mucho más eficiente que otros.
+</details>
 
-
-# Python
+<details>
+<summary><h1>Python</h1></summary>
 
 if():
 else:
@@ -2595,9 +2606,10 @@ List mapping:
 
 l = list(map(int, ['1', '2', '3']))
 print(l) >> [1, 2, 3]
+</details>
 
-
-# React
+<details>
+<summary><h1>React</h1></summary>
 
 npx create-react-app react-app
 
@@ -2745,9 +2757,10 @@ npx react-native init Delen
 
 // Levantar aplicacion
 npx react-native run-android
+</details>
 
-
-# Redes
+<details>
+<summary><h1>Redes</h1></summary>
 
 nast -m -i interfaz
 
@@ -2758,9 +2771,10 @@ nmap -v -sP 192.168.1.1/24 | grep down -v
 ipinfo -t ip
 
 Subnet Mask: As a general rule wherever there is a 255 in the subnet mask then the corresponding number of the IP address is part of the network id; where there is 0 in the subnet mask the corresponding number in the IP address is part of the host id. For an IP address of 192.168.0.1 with a subnet mask of 255.0.0.0. This tells the device that the first number of the IP address is to be used as the network address and the last 3 are to be used as the host id. In this example, the computer network would be 192.x.x.x. As long as another computer has the same subnet mask and an IP address starting with 192 they can communicate with each other. If the subnet mask was 255.255.0.0 then this means that the first 2 numbers identify the network instead (192.168.x.x). Therefore to be on the same network both devices must have IP addresses starting with 192.168.
+</details>
 
-
-# Redis
+<details>
+<summary><h1>Redis</h1></summary>
 
 redis-cli -h localhost -p 26379 ping
 
@@ -2779,9 +2793,10 @@ Comandos
 	- get "intention:cuit:20-33333333-3:branch:lavalle 333:checkout:1"
 
 			"{\"intention_id\":34206,\"intention_datetime\":\"2020-02-18T11:44:52-03:00\",\"status\":\"created\",\"cuit\":\"20-33333333-3\",\"branch\":\"lavalle 333\",\"checkout\":\"1\",\"terminal_number\":\"11111111\",\"intention_type\":\"payment\",\"amount\":100.99,\"currency\":\"ARS\",\"payment_methods_data\":[{\"payment_method_id\":1,\"establishment_id\":\"123\",\"trace_number\":99,\"ticket_number\":99}],\"integrator_intention_id\":\"123123\",\"original_transaction_id\":null}"
+</details>
 
-
-# Regex
+<details>
+<summary><h1>Regex</h1></summary>
 
 Regex para validar formato LDAP
 
@@ -2792,8 +2807,10 @@ Regex para validar formato LDAP
 Remove 2 HTML Tags
 
 <[^>]*>
+</details>
 
-
+<details>
+<summary><h1>Scala</h1></summary>
 # Scala
 
 sbt new
@@ -3352,8 +3369,10 @@ val aNewSet = mySet1 diff mySet2
 val tuple = ("apple", "dog")
 val fruit = tuple._1 - "apple"
 val animal = tuple._2 - "dog"
+</details>
 
-# SOLID
+<details>
+<summary><h1>SOLID</h1></summary>
 
 Single Responsability - Cada clase deberia tener una responsabilidad
 	
@@ -3364,8 +3383,10 @@ Liskov Substitution - Toda clase que es hija de una clase debe poder usarse como
 Interface Segregation - Tener pequeñas clases especializadas
 	
 Dependency Inversion - Los modulos de alto nivel no deberian depender de modulos de menor nivel (abstraccion) (ej que base de datos utilizamos)
+</details>
 
-# SQL
+<details>
+<summary><h1>SQL</h1></summary>
 
 grant, metodo para asignar permisos a usuarios de base de datos relacionales
 
@@ -3540,9 +3561,10 @@ Los triggers se crean con la instrucción "create trigger". Esta instrucción es
     inner join IAMUSER on IAMUSER_INHERITEDROLE.IAMUSER = IAMUSER.ID
     where IAMROLE.ROLELEVEL = 10
     group by UPPER(FN_parse_value(IAMROLE.SLASHDN,10,11,'\')), IAMUSER.OBJECTNAME
+</details>
 
-
-# SSL Certificates
+<details>
+<summary><h1>SSL Certificates</h1></summary>
 
 export PATH=/usr/java/jdk1.8.0_202/bin:$PATH
 
@@ -3617,10 +3639,10 @@ Vagrant.configure(VAGRANT_FILE_VERSION) do |config|
 end
 
 vagrant reload
+</details>
 
-
-# WebRTC
-
+<details>
+<summary><h1>WebRTC</h1></summary>
 
 ![alt_text](images/webRTC.png "image_tooltip")
 
@@ -3630,9 +3652,10 @@ vagrant reload
 *   **TURN server** is used to let peers transmit streams to each other behind a firewall. There is no peer-to-peer streams transmission in this case. All media traffic goes through a TURN server.
 
 Google Stun Server: stun:stun.l.google.com:19302
+</details>
 
-
-# Windows
+<details>
+<summary><h1>Windows</h1></summary>
 
 FC: File Compare
 
@@ -3700,9 +3723,10 @@ getmac
 tracert (tracert google.com)
 
 pathping - tracert con más información
+</details>
 
-
-# General
+<details>
+<summary><h1>General</h1></summary>
 
 Dependency Injection es una forma de implementar Inversion of Control
 
@@ -3733,4 +3757,5 @@ adb pull /data/app/com.example.someapp-2.apk path/to/desired/destination
 Decompile APK
 
 apktool d application.apk
+</details>
 
