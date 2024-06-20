@@ -548,14 +548,14 @@ Root has no value \
 </details>
 
 <details>
-<summary><h2>Graphs/h2></summary>
+<summary><h2>Graphs</h2></summary>
 
 Can be represented as a list or as a matrix \
 Non negative weights
 </details>
 
 <details>
-<summary><h2>Maps/h2></summary>
+<summary><h2>Maps</h2></summary>
 
 It’s and ArrayList \
 Needs a hash function to hash the key \
@@ -569,7 +569,7 @@ Collision: when 2 keys map to the same cell \
 </details>
 
 <details>
-<summary><h2>LRU Cache/h2></summary>
+<summary><h2>LRU Cache</h2></summary>
 
 LRU = Least Recently Used \
 It’s a Hashmap with its value is a pointer to another item \
@@ -578,7 +578,7 @@ The head is when we update the cache to the most recently used item and the tail
 </details>
 
 <details>
-<summary><h2>Interview/h2></summary>
+<summary><h2>Interview</h2></summary>
 
 I in fact, even have a question that Netflix I used to ask all the time,which was implement an async request queue,in which only three requests can be out at any one time.Or three async operations can be out at any one time.And when they inevitably use an array, or use the JavaScript brackets,I'd go, why would you not want to use those?And they'd say, well, I'm using them because you can do shift and non-shift.And I go, okay, well, I mean if you have a million items in there,do you still use them?And they go, yeah, why not?And I know for a fact they haven't thought about the fact, that when you remove oradd to the front, you are fundamentally having to shift everything
 
@@ -588,7 +588,7 @@ Obviously, we couldn't get the median very easily right now because we don't act
 </details>
 
 <details>
-<summary><h1>Firebase/h1></summary>
+<summary><h1>Firebase</h1></summary>
 
 ng build --prod
 
@@ -606,14 +606,14 @@ firebase deploy --only hosting
 </details>
 
 <details>
-<summary><h1>Flutter/h1></summary>
+<summary><h1>Flutter</h1></summary>
 	
 flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8989
 
 </details>
 
 <details>
-<summary><h1>Github/h1></summary>
+<summary><h1>Github</h1></summary>
 
 Crear PR con commits especificos
 
@@ -725,7 +725,7 @@ desde develop
 </details>
 
 <details>
-<summary><h1>Go/h1></summary>
+<summary><h1>Go</h1></summary>
 	
 go build file.go -> genera un ejecutable
 
@@ -749,7 +749,7 @@ In Go names starting with a capital letter are public, names with a lowercase le
 </details>
 
 <details>
-<summary><h1>HTML/h1></summary>
+<summary><h1>HTML</h1></summary>
 
 datalist - Dropdown with searchable text
 
@@ -769,7 +769,7 @@ contenido editable:
 </details>
 
 <details>
-<summary><h1>Java/h1></summary>
+<summary><h1>Java</h1></summary>
 	
 *   JME – Mobile (GPS, Tablets, Celulares)
 *   JSE – Desktop
