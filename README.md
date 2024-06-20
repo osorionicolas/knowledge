@@ -494,6 +494,7 @@ JS Array is an ArrayList underneath the hood
     - Pre
     - Recurse
     - Post
+</details>
 
 <details>
 <summary><h2>Trees</h2></summary>
