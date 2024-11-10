@@ -3694,6 +3694,9 @@ Copiar nombres de todos los archivos del directorio a un archivo de texto
 dir /b > files.txt
 
 
+set __compat_layer=runasinvoker 
+start (program name)
+
 ## Red
 
 arp -a
