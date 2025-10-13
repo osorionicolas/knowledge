@@ -1958,6 +1958,9 @@ Pod - grupo de containers
 master node
 workers
 
+
+ClusterIP is for internal communication within the cluster, NodePort exposes a service on a static port on each node's IP for external access, and LoadBalancer creates an external load balancer to distribute traffic to nodes, typically using a cloud provider's service. ClusterIP is the default and simplest for internal use, NodePort is good for testing or non-cloud environments, while LoadBalancer is the standard for external, production-grade access, especially in the cloud.
+
 ## Commands
 
 get config file from master node
