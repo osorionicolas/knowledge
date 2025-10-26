@@ -31,7 +31,6 @@ Table of Contents
     + [Spring Cloud](#spring-cloud)
   * [Streams](#streams)
   * [Testing](#testing)
-    + [Rest assured](#rest-assured)
     + [Gatling](#gatling)
     + [JMeter](#jmeter)
   * [Tomcat](#tomcat)
@@ -1556,6 +1555,19 @@ In some cases, it may be desirable to fail startup of a service if it cannot con
 
 ![alt_text](images/streams.png "image_tooltip")
 
+for(Employee employee : employees) {
+ maxMap.merge(employee.department, employee.salary, Math::max);
+}
+
+The Map.merge() method works like this:
+
+The first parameter is the key into the Map - for which you want to insert, or update the value.
+
+The second parameter is the new value to update the stored value with.
+If no value is stored for the key, or null is stored, the Map simply stores this value.
+
+The third parameter is a Function. If the Map already has a value stored for the given key, this function is called with the old and new value as parameters. The value returned from this Function is what is stored as value for the key in the Map.
+
 
 ## Testing
 
@@ -1597,10 +1609,6 @@ The first solution (with the MockitoAnnotations.initMocks) could be used when yo
 
 The second solution (with the MockitoJUnitRunner) is the more classic and my favorite. The code is simpler.
 
-
-### Rest assured
-
-TODO
 
 ## Tomcat
 
